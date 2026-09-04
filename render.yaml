@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: avgeek-academy-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m bot
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: PREMIUM_STARS_PRICE
+        value: "1"
+      - key: PREMIUM_BYPASS_USER_IDS
+        value: "7492397738"
+      - key: WEBHOOK_PATH
+        value: /telegram
+      - key: PORT
+        value: "10000"
+      - key: DAILY_LESSON_HOUR
+        value: "9"
+      - key: PYTHON_VERSION
+        value: "3.12.8"

@@ -1,0 +1,34 @@
+# BotFather copy — paste into @BotFather for @AvGeekAcademyBot
+
+## /setname
+AvGeek Academy
+
+## /setdescription
+(Short description, up to 512 chars)
+
+Learn aviation technology on Telegram: aerodynamics, structures, propulsion, avionics, systems, nav/ATC, and safety. Short lessons, quizzes, streaks, certificates. Free Aero + Structures; unlock the rest with Stars (AvGeek Pro). Teaching aid only — not flight instruction. /legal
+
+## /setabouttext
+(About text, up to 120 chars)
+
+Short aviation lessons, quizzes & certificates. Free Aero + Structures · Pro via Stars.
+
+## /setuserpic
+Use a clean aircraft / wing / glass-cockpit icon (square, high contrast).
+
+## /setcommands
+start - Welcome and main menu
+menu - Open the main menu
+help - Commands and how to learn
+progress - Lessons, quizzes, streak
+fact - A random aviation fact
+term - Look up a glossary term
+daily - Daily lesson on|off
+certificate - View earned certificates
+pro - AvGeek Pro details
+buy - Unlock Pro with Stars
+legal - Disclaimer, terms, privacy
+
+## Payments / Stars
+Ensure digital goods / Stars payments are enabled for the bot per current BotFather / Telegram docs.
+Payload used by the bot: premium_30d · currency XTR · title "AvGeek Pro — 30 days".

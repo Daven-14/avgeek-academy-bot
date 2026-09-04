@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AvGeek Academy — Learn aviation on Telegram</title>
+  <meta name="description" content="Short lessons, quizzes, streaks, and certificates. Free Aerodynamics + Structures; unlock the full curriculum with Telegram Stars." />
+  <style>
+    :root {
+      --bg: #0b1a2b;
+      --card: #12263a;
+      --text: #e8eef5;
+      --muted: #9bb0c5;
+      --accent: #3db8ff;
+      --gold: #d4af37;
+      --ok: #3dd68c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a3a5c, transparent),
+                  radial-gradient(900px 500px at 100% 0%, #1e2a4a, transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header { text-align: center; margin-bottom: 2.5rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(61,184,255,0.15);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.8rem 0 0.4rem; }
+    .lead { color: var(--muted); max-width: 38rem; margin: 0 auto 1.5rem; }
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #2ea8f0, #1a7fd4);
+      color: white;
+      text-decoration: none;
+      font-weight: 650;
+      padding: 0.9rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(30,140,220,0.35);
+    }
+    .cta:hover { filter: brightness(1.08); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 1.2rem 1.25rem;
+    }
+    .card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 2rem;
+    }
+    .plan { position: relative; }
+    .plan.pro { border-color: rgba(212,175,55,0.45); }
+    .plan .tag {
+      position: absolute; top: 0.85rem; right: 0.85rem;
+      font-size: 0.75rem; color: var(--gold);
+    }
+    ul { margin: 0.6rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+    li { margin: 0.25rem 0; }
+    .check { color: var(--ok); }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Telegram · AvGeek Academy</span>
+      <h1>Learn how aircraft really work</h1>
+      <p class="lead">
+        Short lessons, scored quizzes, streaks, and certificates —
+        from aerodynamics to avionics. Built for curious flyers, student pilots, and engineers.
+      </p>
+      <a class="cta" href="https://t.me/AvGeekAcademyBot">Open @AvGeekAcademyBot</a>
+    </header>
+
+    <section class="grid" aria-label="Features">
+      <div class="card">
+        <h3>📚 Seven modules</h3>
+        <p>Aero, structures, propulsion, avionics, systems, nav/ATC, and safety / emerging tech.</p>
+      </div>
+      <div class="card">
+        <h3>📝 Quizzes + certificates</h3>
+        <p>Finish a module’s lessons and score ≥80% to earn a shareable certificate.</p>
+      </div>
+      <div class="card">
+        <h3>🔥 Streaks &amp; daily lesson</h3>
+        <p>Keep a learning streak. Opt in for a morning lesson push around 09:00 UTC.</p>
+      </div>
+      <div class="card">
+        <h3>🖼️ Diagrams</h3>
+        <p>Module home screens include illustrations when available — learn visually.</p>
+      </div>
+    </section>
+
+    <h2 style="text-align:center;margin:0 0 0.5rem;">Free vs Pro</h2>
+    <p class="lead" style="text-align:center;">Start free. Unlock the full curriculum with Telegram Stars.</p>
+    <div class="plans">
+      <div class="card plan">
+        <h3>Free</h3>
+        <ul>
+          <li><span class="check">✓</span> Aerodynamics basics</li>
+          <li><span class="check">✓</span> Aircraft structures &amp; materials</li>
+          <li><span class="check">✓</span> Facts, glossary, progress, streaks</li>
+          <li><span class="check">✓</span> Certificates on free modules</li>
+        </ul>
+      </div>
+      <div class="card plan pro">
+        <span class="tag">⭐ Stars</span>
+        <h3>AvGeek Pro — 30 days</h3>
+        <ul>
+          <li><span class="check">✓</span> Everything in Free</li>
+          <li><span class="check">✓</span> Propulsion, Avionics, Systems</li>
+          <li><span class="check">✓</span> Navigation &amp; ATC</li>
+          <li><span class="check">✓</span> Safety, regs &amp; emerging tech</li>
+          <li><span class="check">✓</span> Full certificate track</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="text-align:center;">
+      <a class="cta" href="https://t.me/AvGeekAcademyBot">Start learning on Telegram</a>
+    </p>
+
+    <footer>
+      <p>
+        <strong>Disclaimer:</strong> AvGeek Academy is a teaching aid only — not flight instruction,
+        ground school, or operational guidance. No liability. See <code>/legal</code> in the bot.
+      </p>
+      <p>Bot: <a href="https://t.me/AvGeekAcademyBot">t.me/AvGeekAcademyBot</a></p>
+    </footer>
+  </div>
+</body>
+</html>

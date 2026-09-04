@@ -1,0 +1,31 @@
+facts:
+- A stall is about angle of attack, not a magic speed. An airliner can stall in a level attitude if it is slow enough, and a fighter can stall with the nose pointed at the ground if AoA is too high.
+- Wingtip vortices are the visible leftover of lift. Heavy, clean, and slow aircraft make the strongest ones — which is why ATC spaces you behind a landing A380.
+- On a modern high-bypass turbofan at takeoff, most of the thrust comes from the fan, not the hot jet at the core.
+- Indicated stall speed rises with the square root of load factor. In a 60° bank level turn (2 G) it is 1.41 times the 1-G stall speed.
+- The tropopause is where the temperature stop falling with altitude. Jet streams live near it, which is why long-haul flight planning is a wind game.
+- Cabin altitude in a typical airliner is kept around 6,000–8,000 ft equivalent, not sea level. The 787/A350 can go lower (more comfortable) because their composite/advanced fuselages tolerate a bigger pressure differential.
+- RVSM airspace (FL290–FL410) uses 1,000 ft vertical separation, which is only legal if both airplanes have certified altimetry and autopilots.
+- A ram-air turbine (RAT) is a little propeller that pops into the slipstream to give you emergency hydraulic or electrical power after a dual-engine or electrical disaster.
+- 'The “black box” is two boxes, and they are orange: a Flight Data Recorder and a Cockpit Voice Recorder, built to survive impact, fire, and salt water.'
+- Fowler flaps do not just droop — they slide aft, adding wing area as well as camber. That is a big part of why a 777 can use the same wing at Mach 0.84 and at 140 kt on short final.
+- ETOPS (now Extended Operations) is the rule that says how far a twin-engine airliner may fly from a diversion airport. Modern twins are certified for 180, 240, even 330 minutes, which is why they cross oceans that used to be three- and four-engine territory.
+- Pitot tubes are heated because supercooled water will ice them shut. Several hull-loss accidents started with a lie on the airspeed tape.
+- Comet, 707, and TU-104 taught the industry that a pressurized fuselage is a fatigue problem. Windows became round because corners concentrate stress.
+- Bypass ratio on a GE9X is about 10:1. Early turbojets were 0:1 — every ounce of air went through the fire.
+- TCAS resolution advisories are coordinated. If your box says climb, the other airplane’s box is being told to descend. Follow the box, then tell ATC.
+- Ground effect (within about a wingspan of the ground) reduces induced drag and can make the airplane float on landing. It is not a magic cushion of air; it is the vortices being disrupted by the surface.
+- A transponder squawk of 7700 is the universal “emergency” code. 7600 is radio failure. 7500 is unlawful interference.
+- Fly-by-wire on an Airbus in Normal law will try to stop you from stalling. In Alternate or Direct law those protections shrink or vanish — and you have to know which law you are in.
+- Jet A freezes around −40 °C. Polar and high-altitude flights manage fuel temperature, sometimes by descending into warmer air.
+- The glideslope of a typical ILS is 3 degrees. At 3°, you lose about 318 ft of altitude per nautical mile — a handy mental math check.
+- Carbon brakes work better hot. On a rejected takeoff they can glow; they are designed to, once.
+- ADS-B Out broadcasts your GPS position. It is why flight-tracking sites can show airliners, and why ATC in some regions no longer needs a primary radar paint for separation.
+- A constant-speed propeller is a governor plus variable pitch. The blue lever sets RPM; the throttle sets how much power the engine is allowed to make at that RPM.
+- Washout (wing twist) makes the root stall before the tip so you keep aileron control. Nature almost never gives you that for free; designers put it in.
+- Sustainable Aviation Fuel is not a new engine. It is a certified kerosene stand-in. The bottleneck is making enough of it, not whether a CFM56 will burn it.
+- Mach tuck is a high-speed pitch-down as shock waves move the center of pressure aft. Swept wings and Mach trim exist partly because of it.
+- The yaw damper is a small autopilot that stops Dutch roll — a coupled yawing/rolling oscillation that swept-wing jets love. On some types it is effectively required for dispatch.
+- '"Center of gravity too far aft: unstable, stall recovery harder. Too far forward: heavy on the elevator, higher stall speed, may not rotate. Weight-and-balance is not paperwork for its own sake."'
+- A radio altimeter measures height above the ground, not sea-level altitude. Autoland, TAWS, and some flare laws depend on it, which is why 5G interference near airports was a real certification argument.
+- Open-rotor (unducted fan) engines promise turboprop-like efficiency at near-jet speeds. The engineering argument is noise, blade-off containment, and pylon integration.

@@ -1,0 +1,84 @@
+terms:
+  Angle of attack: The angle between the wing’s chord line and the oncoming airflow. Stall is an AoA event, not a speed event.
+  Chord: Straight line from the leading edge of an airfoil to the trailing edge. AoA is measured from this line.
+  Camber: Curvature of an airfoil’s mean line. More camber generally means more lift (and more drag) at a given AoA.
+  Lift: Aerodynamic force perpendicular to the flight path, produced mainly by the wings. In steady level flight it equals weight.
+  Drag: Aerodynamic force opposite the flight path. Parasite drag grows with speed; induced drag is the tax on lift.
+  Induced drag: Drag due to lift, associated with wingtip vortices. Highest when slow, heavy, or pulling G.
+  Parasite drag: Form, skin-friction, and interference drag. Rises roughly with speed squared.
+  Stall: Flow separation from the wing after the critical angle of attack, causing a loss of lift and a rise in drag.
+  Critical angle of attack: AoA at which the wing stalls. Roughly 15–18° for many plain wings; devices change it.
+  Center of gravity: Point through which weight acts. Its position versus the aerodynamic center sets pitch stability.
+  Center of pressure: Point where the net aerodynamic force on a surface acts. It moves with AoA and Mach.
+  Airfoil: Cross-sectional shape of a wing or blade, usually with a rounded leading edge and sharp trailing edge.
+  Washout: Built-in twist so the wingtip has a lower incidence than the root, making the root stall first.
+  Aspect ratio: Wing span squared divided by area. High aspect ratio (gliders) means lower induced drag.
+  Ground effect: Change in the flow (and a drop in induced drag) when flying within about one wingspan of the surface.
+  Mach: True airspeed divided by the local speed of sound. Compressibility and shock waves appear as Mach rises.
+  Shock wave: Sudden pressure jump in supersonic flow. Source of wave drag and sonic booms.
+  Spar: Main spanwise beam of a wing or tail. Carries bending loads.
+  Rib: Chordwise member that holds airfoil shape and feeds skin loads into the spars.
+  Semi-monocoque: Structure whose skin carries a large share of the load, stiffened by frames and stringers. Standard airliner fuselage.
+  Fail-safe: Design so that a single structural failure still leaves a path that can carry limit load long enough to land.
+  Damage tolerance: Philosophy that assumes cracks exist and uses inspection intervals to find them before they go critical.
+  Composite: Fibers (usually carbon or glass) in a polymer matrix. High specific stiffness; different impact and inspection behaviour than metal.
+  CFRP: Carbon-fiber reinforced polymer. Primary structure on types like the 787 and A350.
+  Flutter: Unstable interaction of aerodynamic, inertial, and elastic forces that can destroy a surface in seconds.
+  Bypass ratio: In a turbofan, mass flow that goes around the core divided by mass flow through the core.
+  Turbofan: Gas turbine with a ducted fan; most airliner thrust comes from the fan accelerating bypass air.
+  Turbojet: Gas turbine in which all air goes through the core. Noisy, thirsty, still used where speed or simplicity wins.
+  Turboprop: Gas turbine that delivers most useful power to a propeller through a reduction gearbox.
+  Afterburner: Extra fuel burned in the exhaust (reheat) for a large thrust increase at very high fuel flow.
+  FADEC: Full Authority Digital Engine Control — dual-channel computers that meter fuel and engine geometry within limits.
+  N1: Fan / low-pressure spool speed, in percent. Common thrust-setting parameter on turbofans.
+  EGT: Exhaust gas temperature. A primary limit during start and high power.
+  Magneto: Engine-driven generator that provides spark, independent of the airplane battery. Trainers have two.
+  Constant-speed prop: Propeller whose governor changes blade pitch to hold a selected RPM.
+  Pitot tube: Forward-facing tube measuring total pressure, used with static pressure to get airspeed.
+  Static port: Side-facing port measuring ambient pressure for altitude, vertical speed, and the ASI’s reference.
+  ADC: Air Data Computer. Turns pitot, static, and temperature into airspeed, altitude, Mach for the rest of the airplane.
+  PFD: Primary Flight Display — glass-cockpit attitude, speed, altitude, heading, and mode annunciations.
+  MFD: Multi-Function Display — map, weather, traffic, systems synoptics.
+  IRS: Inertial Reference System. Gyros and accelerometers providing attitude, heading, and (with GPS) position.
+  ILS: Instrument Landing System. Localizer (lateral) plus glideslope (vertical) guidance to a runway.
+  VOR: VHF Omnidirectional Range. Ground beacon that lets you fly to/from a radial.
+  DME: Distance Measuring Equipment. Slant-range distance to a ground transponder.
+  RNAV: Area navigation — flying a path defined by waypoints rather than beacon to beacon.
+  RNP: Required Navigation Performance. RNAV plus onboard monitoring and alerting to a specified accuracy.
+  GNSS: Global Navigation Satellite System — GPS, Galileo, GLONASS, BeiDou as a family.
+  WAAS: US satellite-based augmentation (a form of SBAS) that enables LPV GPS approaches similar to ILS minima.
+  Transponder: Radar beacon that replies with a four-digit squawk and usually altitude (Mode C/S).
+  ADS-B: Automatic Dependent Surveillance–Broadcast. Airplane broadcasts GPS position; others and ATC can display it.
+  TCAS: Traffic Collision Avoidance System (ACAS). Issues coordinated climb/descend RAs based on transponder interrogations.
+  GPWS: Ground Proximity Warning System. Radio-altimeter-based pull-up warnings. EGPWS/TAWS adds a terrain database.
+  TAWS: Terrain Awareness and Warning System. The modern CFIT defense, including EGPWS.
+  Radio altimeter: Measures height above the terrain, used on short final, autoland, and TAWS.
+  QNH: Altimeter setting that makes the instrument read field elevation on the ground.
+  Flight level: Altitude based on standard pressure 1013.25 hPa, used above the transition altitude (e.g. FL350).
+  RVSM: Reduced Vertical Separation Minimum. 1,000 ft separation in high-altitude airspace for certified aircraft.
+  Squawk: Four-digit transponder code. 7700 emergency, 7600 radio fail, 7500 hijack.
+  IFR: Instrument Flight Rules. ATC separation from other IFR traffic; required in IMC and in some airspace.
+  VFR: Visual Flight Rules. See-and-avoid, with weather minima. Not a license to ignore ATC in controlled airspace.
+  SID: Standard Instrument Departure. Published IFR climb-out procedure.
+  STAR: Standard Terminal Arrival Route. Published IFR arrival procedure.
+  MEL: Minimum Equipment List. What may be inoperative at dispatch, for how long, and with which procedures.
+  SMS: Safety Management System. Required organizational framework for finding and fixing hazards before they become accidents.
+  CRM: Crew Resource Management. Using all people and information in the cockpit (and cabin) rather than a steep authority gradient.
+  FBW: Fly-by-wire. Pilot inceptor commands computers, which command actuators, often with envelope protection.
+  Envelope protection: Control-law features that limit AoA, bank, speed, or G to keep the airplane inside a safe envelope.
+  RAT: Ram-air turbine. Emergency windmill providing hydraulic and/or electrical power after major failures.
+  APU: Auxiliary Power Unit. Small turbine in the tail (usually) providing electricity and bleed air on the ground and in flight.
+  Hydraulic system: High-pressure fluid powering controls, gear, flaps, spoilers. Transports have multiple independent systems.
+  Crossfeed: Fuel plumbing that lets one tank/wing supply the opposite engine.
+  Fowler flap: Trailing-edge flap that translates aft (adding area) as it deflects (adding camber).
+  Spoiler: Panel that pops up to dump lift and add drag. Used as speedbrakes, roll aids, and lift dump on landing.
+  Yaw damper: Autopilot function that suppresses Dutch roll on swept-wing airplanes.
+  Dutch roll: Coupled yaw-roll oscillation typical of swept wings. Uncomfortable and, if undamped, dangerous.
+  ETOPS: Extended Operations. How far a twin may operate from a diversion airport, based on reliability and systems.
+  eVTOL: Electric vertical takeoff and landing aircraft, typically distributed electric propulsion for urban air mobility.
+  SAF: Sustainable Aviation Fuel. Certified kerosene alternative (waste oils, biomass, or synthetic) usable in existing engines.
+  ICAO: International Civil Aviation Organization. UN agency that writes global aviation standards.
+  FAA: US Federal Aviation Administration. Certificates aircraft, airmen, and airlines in the United States.
+  EASA: European Union Aviation Safety Agency. The EU counterpart to the FAA for certification and rules.
+  Type certificate: Regulatory approval that a specific aircraft (or engine/propeller) design meets the airworthiness code.
+  Bleed air: Compressed air taken from the engine compressor, traditionally used for cabin pressurization, air-conditioning, and anti-ice.

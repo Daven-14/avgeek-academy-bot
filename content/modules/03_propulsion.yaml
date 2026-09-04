@@ -1,0 +1,142 @@
+id: prop
+title: Propulsion
+emoji: "🔥"
+blurb: >
+  From magnetos and mixture knobs to bypass ratios and FADEC. How piston,
+  turboprop, turbojet, and turbofan engines each make thrust — and why
+  airliners almost all chose the big fan.
+lessons:
+  - title: Piston engines still matter
+    body: |-
+      Most training airplanes still use a four-stroke <b>spark-ignition piston engine</b> turning a propeller. Think automotive engine, then add aviation habits: dual magnetos (independent ignition), often carburetor heat or fuel injection, a mixture control, and the expectation that it will run for hours at 75% power.
+
+      The propeller converts shaft power into thrust. A <b>fixed-pitch</b> prop is a compromise between takeoff and cruise. A <b>constant-speed</b> prop (governed blade pitch) lets the engine run at an efficient RPM while the blades take a bigger or smaller bite.
+
+      Power falls with altitude because the air is thinner unless you add a <b>turbocharger</b> or <b>supercharger</b>. Mixture must be leaned as density drops or you run overly rich, lose power, and foul plugs. Detonation and shock-cooling are the two ways pilots abuse these engines.
+
+      They are cheap, well understood, and thirsty. Specific fuel consumption is much worse than a turbine’s. Aviation gasoline (100LL) is also a supply and environmental problem, which is why diesel/Jet-A pistons and electric trainers are appearing.
+    simple: |-
+      A typical school airplane has a gasoline piston engine, similar to a car’s, turning a propeller. It has two independent spark systems (magnetos) so one failure does not stop the engine.
+
+      The propeller is a spinning wing. Some have a fixed blade angle; fancier ones change pitch so the engine can stay at a happy RPM.
+
+      Higher up, thin air means less power unless the engine is turbocharged. You also lean the mixture because there is less oxygen. These engines are simple and expensive to feed.
+  - title: Turboprops — a turbine that still drives a propeller
+    body: |-
+      A <b>turboprop</b> is a gas turbine whose leftover shaft power turns a propeller through a <b>reduction gearbox</b>. Air is compressed, fuel is burned in a combustor, and hot gas spins a turbine. Some of that turbine power runs the compressor (as in any jet); the rest turns the prop.
+
+      Why bother? A propeller moves a <b>large mass of air relatively slowly</b>, which is efficient at regional speeds (roughly 250–400 kt) and on shorter runways. Turboprops own the 20–70 seat regional and military-transport niche (ATR, Dash 8, C-130, A400M).
+
+      Free-turbine designs (PT6 family) mechanically separate the gas generator from the power turbine, which makes the propeller easier to start and to feather. Reverse thrust is just a big change in blade pitch.
+
+      Limits: propellers get unhappy as tip Mach numbers climb, so turboprops do not cruise with the jets. Gearboxes are heavy and are a maintenance center of gravity.
+    simple: |-
+      A turboprop is a jet engine that spends most of its power spinning a propeller, through a gearbox, instead of blasting all the air out the back.
+
+      Propellers are great at moderate speeds and shorter runways because they shove a lot of air gently. That is why regional airliners and many military transports use them.
+
+      They cannot fly as fast as a turbofan: the propeller tips would go supersonic and get loud and inefficient. The gearbox is the high-maintenance middleman.
+  - title: Turbojets, turbofans, and bypass
+    body: |-
+      A <b>turbojet</b> dumps all the air through the core: compressor, combustor, turbine, nozzle. Thrust comes from accelerating a relatively small mass of air a lot. They powered the first jet airliners and still suit fighters and very high-speed aircraft, especially with an <b>afterburner</b> (fuel dumped in the exhaust for extra thrust at terrible fuel burn).
+
+      A <b>turbofan</b> adds a large fan in front. Some air goes through the core; most goes around it. That ratio is the <b>bypass ratio</b>. High-bypass engines (8:1 to 12:1 and beyond on a GE9X or UltraFan) are quiet and efficient at airliner speeds because — like a prop — they move a large mass of air more gently. Low-bypass fans (around 0.3–1) suit fighters that need a smaller face, faster response, and afterburning.
+
+      <b>Turbofan vs turbojet at takeoff:</b> the fan produces most of the thrust on a modern airliner. The core’s job is to power that fan and to provide a hot jet for the rest.
+
+      <b>Geared turbofans</b> (PW1000G) let the fan spin slower than the low-pressure turbine, which helps both stay near their best tip speeds.
+    simple: |-
+      A turbojet pushes a small amount of air out the back very fast. Fine for fighters; noisy and thirsty for airliners.
+
+      A turbofan puts a big fan in front. Most of the air never goes through the fire — it just gets a shove from the fan and goes around (bypass). That is quieter and burns less fuel at airliner speeds.
+
+      Bypass ratio is “how much air goes around versus through the core.” Big airliners want a high number. Fighters want a small, tough engine, often with an afterburner.
+  - title: How a jet actually makes thrust
+    body: |-
+      Thrust is a momentum budget:
+
+      <code>F ≈ ṁ (V_exit − V_inlet) + (P_exit − P_ambient) A_exit</code>
+
+      Move more mass, or give it a bigger speed increase. Inlet, fan, compressors, combustor, turbines, and nozzle are each a deal with efficiency and stall margins.
+
+      Compressors are axial on large engines (many rows of rotating blades and stators). They operate close to <b>surge</b> — a violent breakdown of flow. Bleed valves, variable stators, and the engine control keep the operating line away from the surge line.
+
+      Combustion is continuous, not a series of explosions. Turbine inlet temperature is the main lever on power, and it is limited by blade materials and cooling (internal air plus thermal barrier coatings, now single-crystal nickel alloys).
+
+      On the ground you hear <b>spool-up</b> delay: the rotating machinery has inertia. That is why jet crews spool engines up before they need the thrust, and why FADEC has protection against compressor stall if you slam the lever.
+    simple: |-
+      A jet makes thrust by throwing air backward faster than it came in. More air, or a bigger speed-up, means more thrust.
+
+      The compressor is a stack of fans that pack the air. Push it too hard and the flow can break down (surge). The combustor is a continuous fire, not a car-like series of bangs. The turbine is a windmill in that hot gas; it both drives the compressor/fan and survives temperatures that would melt uncooled metal.
+
+      Big rotating parts take a moment to speed up, so jets do not respond like a go-kart when you shove the thrust lever.
+  - title: Controls, FADEC, and what pilots still manage
+    body: |-
+      Older jets had a hydromechanical fuel control and a room full of gauges: N1, N2, EGT, fuel flow. Pilots had to respect start limits, avoid compressor stall, and set power by tables (assumed temperature, flex/derate).
+
+      <b>FADEC</b> (Full Authority Digital Engine Control) is a dual-channel computer that meters fuel, variable stators, bleeds, and igniters. The crew sets a thrust target; FADEC keeps the engine inside its envelope. Dual channel means one computer can fail and the engine keeps running. A complete FADEC loss is rare and is trained as a drill.
+
+      Crews still choose <b>takeoff derate / assumed temperature</b> to spare the hot section when runway and obstacles allow, monitor for vibration or oil problems, and manage <b>engine-out</b> yaw with rudder. ETOPS rules govern how far a twin may fly from a diversion airport — a reliability and systems story, not just an engine story.
+
+      Reverse thrust (fan or clamshell) helps on landing but is not credited the same way brakes are; the carbon brakes do most of the stopping on a dry runway.
+    simple: |-
+      Today a computer called FADEC runs the engine: fuel, igniters, and several doors and vanes inside. You set how much thrust you want; it keeps the engine safe. There are two computers so one failure is not the end.
+
+      Pilots still choose a gentler takeoff power when the runway is long (saves wear), watch for oil and vibration problems, and know what to do if an engine fails after takeoff (rudder, fly the airplane).
+
+      Thrust reversers help after landing, but the wheel brakes do most of the real stopping on a dry runway.
+quizzes:
+  - question: Dual magnetos on a piston trainer exist mainly to…
+    options:
+      - Charge the GPS
+      - Two independent ignitions; one failure won't stop it
+      - Lean the mixture automatically
+      - Feather the propeller
+    answer: 1
+    explanation: |-
+      Magnetos generate their own spark power, independent of the battery/alternator. Two of them (firing two plugs per cylinder) give redundancy and more complete combustion.
+  - question: A turboprop is best described as…
+    options:
+      - A piston engine with extra exhaust pipes
+      - A gas turbine that drives a propeller through a gearbox
+      - A high-bypass turbofan with the fan removed
+      - An electric motor driving a ducted fan
+    answer: 1
+    explanation: |-
+      Turboprops are gas turbines. After the turbine has driven the compressor, remaining shaft power turns a propeller via a reduction gearbox. That is efficient at regional speeds.
+  - question: High bypass ratio on a turbofan means…
+    options:
+      - Almost all the air goes through the hot core
+      - Most air is moved by the fan and bypasses the core
+      - The engine has an afterburner
+      - The propeller is directly coupled to N2
+    answer: 1
+    explanation: |-
+      Bypass ratio is bypass mass flow divided by core mass flow. High-bypass airliner engines move most of their air through the fan duct, which is why they are quieter and more efficient at subsonic cruise.
+  - question: Afterburning (reheat) is used because it…
+    options:
+      - Big thrust boost for takeoff/combat, at very high fuel flow
+      - Reduces infrared signature and fuel burn in cruise
+      - Cools the turbine blades
+      - Replaces the need for a compressor
+    answer: 0
+    explanation: |-
+      Dumping fuel into the exhaust (where oxygen remains) raises exhaust velocity and thrust dramatically. Fuel consumption is awful, so it is a combat/takeoff tool, not a cruise setting.
+  - question: In the simple thrust idea F ≈ ṁ ΔV, you can raise thrust by…
+    options:
+      - Decreasing mass flow and decreasing exhaust velocity
+      - Raise mass flow and/or the exhaust-minus-inlet speed change
+      - Only by raising cabin pressure
+      - Spinning the weather radar faster
+    answer: 1
+    explanation: |-
+      Thrust is a change in momentum of the air (plus a small pressure-area term). Fans raise ṁ; nozzles and core temperature help raise ΔV. Real engines balance both against noise, weight, and fuel burn.
+  - question: FADEC’s job is to…
+    options:
+      - Fly the ILS
+      - Digitally control the engine within limits (dual-channel)
+      - Replace the need for any crew thrust setting
+      - Pressurize the cabin
+    answer: 1
+    explanation: |-
+      Full Authority Digital Engine Control meters the engine continuously and protects it from stall and overtemp. The crew still sets the desired thrust; they no longer babysit a hydromechanical fuel control.

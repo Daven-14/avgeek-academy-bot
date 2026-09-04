@@ -1,0 +1,150 @@
+id: struct
+title: Aircraft structures & materials
+emoji: "🦴"
+blurb: >
+  Spars, skins, and the difference between a farm-gate wing and a jetliner
+  fuselage. How loads travel, and why aluminum, titanium, and carbon fiber
+  each earn a place on the airplane.
+lessons:
+  - title: The airframe is a load path
+    body: |-
+      An airframe is not a sculpture. It is a set of <b>load paths</b> that carry flight, ground, and cabin-pressure loads to where the structure can handle them.
+
+      The three big pieces:
+
+      • <b>Fuselage</b> — crew, payload, pressurization. Most airliners use a <b>semi-monocoque</b> shell: an aluminum or composite skin stiffened by frames (rings) and stringers (lengthwise). The skin carries much of the load. Older types (and many small GA airplanes) use a <b>truss</b> (welded steel tube) with fabric or metal covering that is mostly non-structural. Pure <b>monocoque</b> (skin only) is rare because a dent would be catastrophic.
+
+      • <b>Wings</b> — lift, fuel, engines, landing loads on some types.
+      • <b>Empennage</b> — tails that provide stability and control.
+
+      Designers talk about <b>limit load</b> (maximum expected in service) and <b>ultimate load</b> (typically 1.5 × limit) without failure. Transport-category aircraft must also keep flying after specified failures — a cracked skin panel, a failed engine pylon fitting — which drives redundancy.
+    simple: |-
+      The airplane is a skeleton plus a skin that together carry all the pushes: lift, landing, cabin air pressure, engine thrust.
+
+      Airliners are like a soda can with extra rings and rails inside (semi-monocoque). The skin does real work. Many small planes are more like a steel-tube bicycle frame with a covering.
+
+      Engineers design for the hardest loads they expect, then add a safety factor, and they plan for parts to crack or fail without the whole airplane coming apart.
+  - title: Wings — spars, ribs, and torsion boxes
+    body: |-
+      A transport wing is a <b>torque box</b>. Front and rear <b>spars</b> (the main spanwise beams) plus upper and lower skins form a closed box that resists bending and twist. <b>Ribs</b> keep the airfoil shape and transfer local skin loads into the spars. <b>Stringers</b> stiffen the skin against buckling.
+
+      Bending: lift tries to fold the wingtips up. The upper skin goes into compression, the lower into tension. That is why you see fat, carefully milled skins on a 777 wing — and why upper-skin buckling and lower-skin fatigue are different problems.
+
+      Fuel often lives inside this box. Manholes, pumps, and wiring have to pass through without wrecking the load path. Engine pylons and landing-gear beams are huge local introductions of load; the fittings there are among the most inspected parts on the airplane.
+
+      Control surfaces attach to the rear spar. A damaged rear spar or a seized flap drive can therefore be both a structural and a handling issue.
+    simple: |-
+      Think of the wing as a long, hollow box. Two beams (spars) run from root to tip. Skins on top and bottom close the box. Ribs are the slices that keep the wing’s shape.
+
+      Lift tries to bend the tips up, so the top of the wing is squeezed and the bottom is stretched. Fuel often sits inside that same box.
+
+      Engines and landing gear dump huge local loads into the wing, so those fittings are extra strong and extra inspected.
+  - title: Materials — why not just steel?
+    body: |-
+      Aviation is obsessed with <b>specific strength</b> and <b>specific stiffness</b> (properties divided by density), plus fatigue, corrosion, toughness, and how the material fails.
+
+      • <b>Aluminum alloys</b> (2024, 7075, 7050) — the 20th-century default. Light, well understood, easy to form and inspect. 2024-T3 is tough and fatigue-friendly (fuselage skins). 7075 is stronger but more notch-sensitive (spars, fittings). Corrosion and fatigue cracking are the long-term enemies.
+      • <b>Titanium</b> — strong, light, loves heat and corrosion. Expensive and hard to machine. Used around engines, pylons, and in the F-22 / 787 bulkheads.
+      • <b>Steels</b> — landing-gear legs, high-strength bolts, firewalls. Heavy, so used only where volume is tight or heat/wear dominate.
+      • <b>Composites</b> (CFRP, GFRP, honeycomb sandwiches) — fibers in a polymer matrix. Huge specific stiffness, no classic metal fatigue, but they fail differently: delamination, barely visible impact damage, and they hide moisture. They need different inspection (tap testing, ultrasound, thermography) and careful lightning-protection mesh.
+
+      The 787 and A350 put composites in the majority of the primary structure. That is a manufacturing and repair revolution, not just a weight save.
+    simple: |-
+      We do not build airliners from mild steel because steel is heavy for the strength you get.
+
+      Aluminum is the classic choice: light, cheap to shape, well understood, but it corrodes and can grow fatigue cracks.
+
+      Titanium is the hot, expensive specialist around engines. Steel is for landing gear and bolts.
+
+      Carbon-fiber composites are lighter still and do not fatigue like metal, but a tool drop can damage them inside without a big dent, so inspection methods are different.
+  - title: Safe-life, fail-safe, damage-tolerant
+    body: |-
+      How long may a part stay on the airplane?
+
+      • <b>Safe-life</b> — replace it at a fixed time/cycle count, assuming it is still good. Common for landing gear and some helicopter parts. Simple, conservative, expensive.
+      • <b>Fail-safe</b> — if the part fails, another path carries the load (multiple spars, tear straps in fuselage skin, redundant fittings). The airplane must be able to fly home.
+      • <b>Damage-tolerant</b> — assume cracks <i>exist</i>. Design so they grow slowly enough that scheduled inspection will find them before they go critical. This is the modern transport-airplane philosophy (FAR/CS 25.571). It depends on inspectability: a crack you cannot see is a crack you cannot manage.
+
+      Composites flip some of this. They may not grow a tidy fatigue crack, but they can hide impact damage. Inspection programs, design allowable strains, and bonded-repair rules are written around that.
+
+      Pressurized fuselages also fight <b>hoop stress</b> every flight. The Aloha 737 accident (1988) is the textbook on what happens when multiple-site fatigue and corrosion defeat a fail-safe skin.
+    simple: |-
+      Three philosophies:
+
+      Safe-life: throw the part away on a schedule, even if it looks fine (landing gear).
+
+      Fail-safe: if one piece breaks, another can carry the load long enough to land.
+
+      Damage-tolerant: we assume tiny cracks are already there, and we inspect often enough to catch them before they become dangerous. That is how modern airliners are certified.
+
+      Cabin pressure stretches the fuselage every flight, so skins and rivet lines get special attention.
+  - title: Empennage, landing gear, and secondary structure
+    body: |-
+      The <b>horizontal stabilizer</b> and <b>fin</b> are small wings with the same spar/rib logic, plus large hinge and actuator loads. On many jets the whole stabilizer trims in incidence (a moving tailplane) because elevator alone cannot handle the CG range and Mach effects.
+
+      <b>Landing gear</b> soaks up a controlled crash on every landing. Oleos (air-oil shock struts), bogies, and carbon brakes live in a harsh world of heat, stones, and side loads. Gear-up is a major drag and noise reduction; the doors and wells must not steal too much of the wing or fuselage structure.
+
+      Distinguish <b>primary structure</b> (failure endangers the airplane) from <b>secondary</b> (fairings, cabin floor panels, some leading-edge skins). Maintenance manuals are ruthless about which is which.
+
+      Flutter, bird strike, and lightning add design cases that have nothing to do with steady 1-G cruise. A wing that is strong enough can still flutter if it is not stiff enough in torsion, or if a mass balance on a control surface is missed after a repair.
+    simple: |-
+      Tails are small wings. On jets the whole horizontal tail often tilts to trim, not just the elevator tab.
+
+      Landing gear is a shock absorber plus brakes that get extremely hot. Pulling it up makes the airplane much cleaner.
+
+      Primary structure is “the airplane comes apart if this fails.” Secondary is “ugly or inconvenient, but you can still fly.” Repairs have to respect that difference, and also flutter, birds, and lightning — not just cruise loads.
+quizzes:
+  - question: Most jet-airliner fuselages are built as…
+    options:
+      - A welded steel truss with doped fabric
+      - A pure monocoque soda-can with no frames
+      - A semi-monocoque skin plus frames and stringers
+      - A solid milled aluminum block
+    answer: 2
+    explanation: |-
+      Semi-monocoque is the transport default: a working skin stiffened by frames and stringers. Pure monocoque is too vulnerable to dents; a steel truss is typical of older or small GA types, not jets.
+  - question: In a wing torque box, the main spanwise members that take bending are the…
+    options:
+      - Ribs
+      - Spars
+      - Flap tracks
+      - Pitot tubes
+    answer: 1
+    explanation: |-
+      Spars run root-to-tip and are the primary bending beams. Ribs hold airfoil shape and feed local loads into the spars. Skins close the box and carry much of the torsion and a share of bending.
+  - question: Under upward wing bending (positive G), the upper wing skin is mainly in…
+    options:
+      - Tension
+      - Compression
+      - Pure shear with no axial stress
+      - Zero stress because the spars take everything
+    answer: 1
+    explanation: |-
+      Positive lift bends tips up: upper skin shortens (compression), lower skin lengthens (tension). That is why upper skins are designed against buckling and lower skins against fatigue cracking.
+  - question: Which material is the usual choice for large transport landing-gear legs?
+    options:
+      - Balsa
+      - High-strength steel
+      - 2024 aluminum sheet
+      - Acrylic
+    answer: 1
+    explanation: |-
+      Gear legs need very high strength in a small volume and must take abuse. High-strength steels (and sometimes titanium) win; aluminum sheet is far too soft for the leg itself.
+  - question: Damage-tolerant design means…
+    options:
+      - The part is replaced on a calendar regardless of condition
+      - Cracks are assumed; inspections must catch them in time
+      - No inspections are needed because composites never crack
+      - The airplane is grounded after any lightning strike
+    answer: 1
+    explanation: |-
+      Damage tolerance (the modern transport philosophy) assumes flaws exist, keeps growth slow, and relies on scheduled inspection. Safe-life is the “replace on time” approach; it is different.
+  - question: Carbon-fiber composites are attractive in primary structure mainly because they…
+    options:
+      - Cheaper than aluminum and easy to hammer-repair
+      - High specific strength; different damage/inspection
+      - Are immune to lightning and impact
+      - Can be welded with the same tools as 2024 aluminum
+    answer: 1
+    explanation: |-
+      CFRP’s payoff is stiffness and strength per kilo, plus no classical metal fatigue. Impact damage can be hard to see, lightning needs mesh/foil, and repairs are a specialized process — not a win on every axis.

@@ -1,0 +1,148 @@
+id: aero
+title: Aerodynamics basics
+emoji: "🌬️"
+blurb: >
+  Why an airplane stays up: the four forces, airfoils, angle of attack, drag,
+  and stall. This is the physics every other module sits on.
+lessons:
+  - title: Four forces of flight
+    body: |-
+      In flight, four forces act on the airplane:
+
+      • <b>Lift</b> — upward force from the wings (and a little from the fuselage).
+      • <b>Weight</b> — gravity acting through the center of gravity.
+      • <b>Thrust</b> — forward force from the engines or propeller.
+      • <b>Drag</b> — aerodynamic resistance opposite to the flight path.
+
+      In <b>unaccelerated straight-and-level flight</b>, the forces balance: lift equals weight, thrust equals drag. Climb, descent, acceleration, and turns are all cases where that balance is deliberately broken.
+
+      Forces act at different points. Lift acts through the <b>center of pressure</b>, weight through the <b>center of gravity (CG)</b>. If those two are not aligned, the airplane wants to pitch. Designers place the CG and the tail so the airplane is <b>statically stable</b> — disturb the nose up, and it tends to come back.
+    simple: |-
+      Four pushes fight each other: wings push up (lift), Earth pulls down (weight), engines push forward (thrust), air holds you back (drag).
+
+      When you fly straight and steady, up equals down and forward equals back. Climb, dive, speed up, or turn by making one force bigger than its opposite.
+
+      The airplane is built so that if the nose wanders up or down a little, it wants to return to where it was. That is stability.
+  - title: How a wing makes lift
+    body: |-
+      An <b>airfoil</b> is a carefully shaped cross-section: rounded leading edge, sharp trailing edge, and usually more camber (curve) on top than on the bottom.
+
+      Two complementary pictures explain lift:
+
+      • <b>Newton</b> — the wing deflects air downward (downwash). Action/reaction: air goes down, airplane goes up.
+      • <b>Bernoulli</b> — air speeds up over the curved upper surface, so static pressure there drops. Higher pressure below than above produces a net upward force.
+
+      Neither slogan is enough by itself. Circulation around the airfoil (the Kutta condition at the trailing edge) ties the two together. The practical variables you control are <b>angle of attack</b>, <b>airpeed</b> (dynamic pressure), <b>wing area</b>, and <b>air density</b>:
+
+      <code>Lift = ½ ρ V² S CL</code>
+
+      CL (lift coefficient) is set mostly by shape and angle of attack. Double the speed, lift goes up by four — until you stall or hit a structural limit.
+    simple: |-
+      A wing is a special shape: round in front, sharp in back, usually more curved on top.
+
+      It throws air downward, and the airplane is pushed up (Newton). Air also rushes faster over the top, so pressure there is lower, and the higher pressure underneath helps lift (Bernoulli). Both are true at once.
+
+      More speed, a bigger wing, thicker air, or a bigger tilt (angle of attack) all make more lift — until the wing stalls.
+  - title: Drag — the price of flying
+    body: |-
+      Drag is the aerodynamic cost of going somewhere. It splits into two families:
+
+      • <b>Parasite drag</b> — skin friction, form (pressure) drag, and interference between parts. It rises roughly with speed squared. Clean the airplane (gear up, fairings, smooth skin) and parasite drag falls.
+      • <b>Induced drag</b> — the penalty for making lift. Wingtip vortices tilt the lift vector slightly backward. Induced drag is highest when the airplane is slow, heavy, or in a high-G turn — anywhere CL is large.
+
+      Total drag has a minimum at a particular speed. Below that, induced drag dominates (the “back side of the power curve”). Above it, parasite drag dominates. That is why a jet sips fuel in cruise at high altitude (thin air, high true speed, low indicated CL) but needs a lot of thrust to stay slow and high on approach.
+
+      <b>Wave drag</b> appears near Mach 1 as shock waves form. Swept wings, area ruling, and supercritical airfoils delay and weaken those shocks.
+    simple: |-
+      Drag is air trying to slow you down. Two kinds matter most:
+
+      Parasite drag is “pushing a shape through the air.” Faster means a lot more of it. A dirty airplane (gear down, panels open) has more.
+
+      Induced drag is “the tax on lift.” Slow, heavy, or turning hard means more of this tax. Wingtip swirls are the visible clue.
+
+      Add them and you get a U-shaped drag curve. There is a sweet-spot speed where total drag is lowest.
+  - title: Angle of attack, camber, and stall
+    body: |-
+      <b>Angle of attack (AoA)</b> is the angle between the chord line and the oncoming airflow — not the angle of the nose to the horizon. A nose-high airplane on final can have a modest AoA if it is fast; a level airplane can stall if it is slow enough that AoA is high.
+
+      Raise AoA and CL rises, almost linearly, until the <b>critical angle of attack</b> (often around 15–18° for a plain wing). Beyond that the flow separates from the upper surface, lift collapses, drag jumps, and the wing <b>stalls</b>. Stall is an AoA event, not a speed event. Weight, G-load, and CG change the <i>speed</i> at which that AoA is reached (accelerated stall, stall speed with flaps, icing).
+
+      <b>Camber</b> (flaps, slats, leading-edge devices) increases CL,max so you can fly slower for takeoff and landing. Flaps also add drag, which is useful on approach. A <b>twist</b> (washout) makes the root stall before the tip so ailerons still work.
+
+      Recovery is always the same idea: reduce AoA (lower the nose / unload), then add energy as needed.
+    simple: |-
+      Angle of attack is how much the wing is tilted into the wind, not how high the nose looks.
+
+      Tilt more, get more lift — up to a point. Past that point the airflow peels off the top of the wing. Lift falls, drag jumps: that is a stall. You can stall at any attitude if you tilt the wing too much.
+
+      Flaps and slats change the wing’s curve so it can make more lift at slow speed. To recover from a stall, first un-tilt the wing, then add speed.
+  - title: Stability, Reynolds number, and the real atmosphere
+    body: |-
+      Air is not an ideal fluid. <b>Viscosity</b> creates a boundary layer. Whether that layer is laminar or turbulent, and whether it stays attached, depends on <b>Reynolds number</b> (speed × size / viscosity). Model airplanes, airliners, and re-entry vehicles live in different Reynolds regimes, which is why a paper-airplane instinct does not always scale.
+
+      <b>Longitudinal stability</b> comes from a CG ahead of the neutral point, plus a tail that produces a restoring moment. Too far aft CG: light and twitchy, stall recovery harder. Too far forward: heavy on the elevator, higher stall speed.
+
+      Density falls with altitude, so true airspeed for a given indicated airspeed rises. Lift and indicated stall speed care about <b>dynamic pressure</b> (what the pitot-static system sees). That is why an airliner can cruise at 480 kt true while the wing “feels” something closer to 250 kt indicated.
+
+      Takeaway: the wing does not know altitude or groundspeed. It knows AoA, dynamic pressure, and its own shape.
+    simple: |-
+      Real air is sticky. That stickiness makes a thin layer on the wing that can be smooth or turbulent, and can peel off. Tiny models and giant airliners do not behave identically.
+
+      The airplane is usually balanced so the nose wants to return after a bump. Put too much weight in the tail and it becomes jumpy and harder to recover from a stall.
+
+      Higher up, the air is thinner, so you move faster over the ground for the same “air feel” on the wing. The wing only cares about that air feel and how much it is tilted.
+quizzes:
+  - question: In unaccelerated straight-and-level flight, which statement is correct?
+    options:
+      - Lift is greater than weight so the airplane does not fall
+      - Lift equals weight and thrust equals drag
+      - Thrust is greater than drag; lift equals weight
+      - All four forces are zero in cruise
+    answer: 1
+    explanation: |-
+      Steady, unaccelerated, straight-and-level flight is an equilibrium: lift = weight and thrust = drag. If thrust exceeded drag you would accelerate; if lift exceeded weight you would climb (or start a curved path).
+  - question: What does a wing primarily do to the air in order to produce lift?
+    options:
+      - Heat the air on the upper surface
+      - Spin the air into a tornado above the fuselage
+      - Deflects air downward (downwash) as part of the flow
+      - Suck the airplane up with a vacuum pump in the wing
+    answer: 2
+    explanation: |-
+      The wing changes the momentum of the air (Newton) and, as part of that flow field, produces a pressure difference (Bernoulli). Downwash is the most useful physical picture; there is no vacuum pump.
+  - question: Induced drag is highest when the airplane is…
+    options:
+      - Fast, clean, and light
+      - Slow, heavy, or pulling high G
+      - In a descent with idle thrust
+      - Above Mach 1 in a dive
+    answer: 1
+    explanation: |-
+      Induced drag is the tax on lift. High CL — slow flight, heavy weight, or a high-G turn — produces strong wingtip vortices and high induced drag. Parasite and wave drag dominate at high speed instead.
+  - question: A stall occurs when…
+    options:
+      - It flies below a magic ASI number, regardless of attitude
+      - The engines quit
+      - The wing exceeds critical AoA and the flow separates
+      - The nose is pointed above the horizon
+    answer: 2
+    explanation: |-
+      Stall is an angle-of-attack event. The indicated stall speed changes with weight, G-load, flap setting, and icing, but the critical AoA for a given configuration is essentially fixed.
+  - question: In the lift equation Lift = ½ ρ V² S CL, doubling true airspeed (all else equal)…
+    options:
+      - Doubles lift
+      - Quadruples lift
+      - Has no effect because CL falls automatically
+      - Cuts lift in half
+    answer: 1
+    explanation: |-
+      Dynamic pressure is ½ ρ V², so lift scales with V squared if CL, density, and area stay the same. In practice the pilot or the autopilot reduces AoA (CL) to keep lift equal to weight, which is why you do not quadruple lift when you accelerate in cruise.
+  - question: Why do many wings have washout (the tip is at a lower incidence than the root)?
+    options:
+      - To make the airplane look faster on the ramp
+      - So the root stalls first; tip ailerons keep working
+      - To increase cruise Mach number
+      - To dump fuel from the wing tanks
+    answer: 1
+    explanation: |-
+      Geometric or aerodynamic twist (washout) makes the inboard wing stall first. The outboard wing and ailerons remain effective, which preserves roll control at the stall and is a common spin-resistant design choice.

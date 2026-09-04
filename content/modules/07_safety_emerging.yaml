@@ -1,0 +1,142 @@
+id: safe
+title: Safety, regs & emerging tech
+emoji: "🛡️"
+blurb: >
+  Why aviation became the safest way to travel: SMS, human factors, and a
+  look at fly-by-wire, composites, eVTOL, and the fuels that might power
+  the next thirty years.
+lessons:
+  - title: Safety is a system, not a slogan
+    body: |-
+      Modern aviation safety is not “don’t make mistakes.” Humans make mistakes. The system is built so that <b>one mistake is not enough</b> to cause a hull loss.
+
+      <b>SMS</b> (Safety Management System) is the ICAO-required framework: a safety policy, risk management, assurance, and promotion. Airlines, airports, and ATC orgs must hunt for hazards before they become accidents — via reports, flight-data monitoring, and audits — and then close the loop.
+
+      <b>Human factors</b> and TEM (Threat and Error Management) treat fatigue, automation surprise, and “rushed ground stop” as threats you brief, not as moral failings. CRM (Crew Resource Management) came from accidents where the airplane was flyable and the culture was not: seniority gradients, silence, and unchecked assumptions.
+
+      The accident record shifted decades ago from mechanical failure to <b>loss of control</b>, CFIT (now hammered by TAWS), and runway excursions. That is why training now spends so much time on upset prevention, go-arounds, and “what is the automation doing?”
+    simple: |-
+      Planes are safe because one error is not supposed to be enough to crash. There are extra radios, extra hydraulics, extra pilots, and a culture of reporting close calls.
+
+      SMS is the official version of “find problems while they are still small.” CRM is “the captain is not a god; speak up.” Fatigue and confusing automation are treated as real threats, not excuses.
+
+      The old accident villains (broken parts, flying into hills) have been beaten down. Today the hard problems are loss of control, runway overruns, and misunderstanding the automatics.
+  - title: Who writes the rules?
+    body: |-
+      <b>ICAO</b> (a UN agency) writes Standards and Recommended Practices. States then put them into their own law. <b>FAA</b> (US), <b>EASA</b> (EU), and other national authorities certificate airplanes, airlines, and people. A 737 sold worldwide is really a conversation among those codes (FAR 25 / CS-25 for large airplanes).
+
+      Layers you will hear:
+
+      • <b>Type certificate</b> — this design is airworthy.
+      • <b>Production certificate</b> — this factory can build it.
+      • <b>Airworthiness certificate</b> — this tail number may fly.
+      • <b>AOC</b> — this airline may operate.
+      • <b>MEL</b> — which bits may be inoperative for a dispatch.
+
+      Ops rules (FAR 121 vs 135 vs 91, or EASA CAT vs NCC) decide rest, dispatch, and equipment. Maintenance lives under a different part, with licensed engineers and a continuing-airworthiness org.
+
+      This looks bureaucratic until you remember that every layer exists because someone, somewhere, died without it. The price of the safest system in transport is paperwork that has to mean something.
+    simple: |-
+      ICAO writes global standards. National bodies like the FAA and EASA turn them into law and actually stamp airplanes, airlines, and pilots as legal.
+
+      An airplane type is certified, the factory is certified, each tail number is certified, and the airline holds an operating certificate. A MEL says what you may legally fly with broken.
+
+      It is a pile of paper, and that paper is how a century of accidents was turned into rules.
+  - title: Fly-by-wire and envelope protection
+    body: |-
+      <b>Fly-by-wire (FBW)</b> means the stick is a request to a computer, not a cable to a valve. Sensors (AoA, air-data, inertial) plus control laws decide the surface deflections. Benefits: weight, flight-envelope protection, easier handling commonality across a family, and the ability to build in slightly unstable airframes (fighters) or load-alleviating laws (airliners).
+
+      Airbus and Boeing implemented this with different philosophies. Airbus sidesticks are not mechanically linked and the laws (Normal / Alternate / Direct) will, in Normal, stop you from stalling or overbanking. Boeing’s 777/787 keep a conventional yoke, with protection that can be overridden more directly. Both still need a crew who understands <b>what law they are in</b>.
+
+      Accidents (AF447 is the case study) show the failure mode: unreliable airspeed, law degradation, and crews who are suddenly hand-flying a jet at high altitude without the protections they trained on. Envelope protection is not a force field. It is software with assumptions.
+
+      Military FBW often adds carefree handling and departure resistance so a pilot can fight the airplane instead of the stall.
+    simple: |-
+      Fly-by-wire: you move a stick, a computer moves the surfaces. The computer can also refuse a dangerous request (too slow, too much bank) when it is working in its normal law.
+
+      Different makers do this differently — Airbus is famous for hard protections and sidesticks; Boeing keeps a yoke and a more override-friendly feel — but both require you to know when the protections have dropped out.
+
+      If the sensors lie, the laws degrade, and you are suddenly flying a less-protected airplane. That is a training problem, not a reason to throw the computers overboard.
+  - title: Composites, more-electric, and the modern airframe
+    body: |-
+      The last two decades of airliners (B787, A350, A220) put <b>carbon-fiber composites</b> in the majority of the wing and fuselage. Payoff: smoother aerodynamic surfaces, fewer corrosion findings, cabin windows that can be larger (structure allows it), and weight. Cost: impact damage that is easy to miss, a new repair culture, and lightning mesh in the skin.
+
+      <b>More-electric</b> architecture replaces engine bleed air for air-conditioning and anti-ice with electrically driven compressors (787). Hydraulic demand drops; electrical demand soars. The airplane becomes a flying HVDC/AC grid with sophisticated load shedding.
+
+      Manufacturing is as much the story as materials: automatic fiber placement, one-piece barrels, and tighter tolerances that make the airplane quieter and more efficient. Airlines care because efficiency is fuel, and fuel is both money and carbon.
+
+      None of this makes inspection optional. A composite airplane still needs a structural maintenance program; it just looks less like “find the rivet crack” and more like “find the delamination.”
+    simple: |-
+      New long-range jets are mostly carbon fiber, not aluminum. They are lighter, they do not rust the same way, and they can be shaped more smoothly. They can also hide a bump’s damage, so inspectors use different tools.
+
+      “More-electric” jets use generators for jobs that used to steal compressor air from the engines (air-conditioning, wing ice protection). That saves fuel and makes the electrical system a bigger deal.
+
+      The point of all this, for an airline, is lower fuel burn — which is also lower CO2 per seat.
+  - title: eVTOL, SAF, and what comes next
+    body: |-
+      <b>eVTOL</b> (electric vertical takeoff and landing) vehicles are the Urban Air Mobility bet: distributed electric fans, fly-by-wire, and a hope of moving people over cities without a heliport’s noise. The hard parts are not CAD renders. They are battery specific energy, certification of novel control laws, ice, bird strike, battery fire, ATC integration, and a business case. Some designs will certify as small airplanes, some as powered-lift; the rules are being written in public.
+
+      <b>SAF</b> (Sustainable Aviation Fuel) is drop-in or near-drop-in kerosene from waste oils, biomass, or synthetic pathways (power-to-liquid). Current airframes can take a blend; the limit is supply and price, not a magic engine change. Hydrogen and true battery-electric make sense first for short regional hops; physics is rude about long-haul batteries.
+
+      Elsewhere: <b>ADS-B</b> and trajectory-based ATM (NextGen / SESAR), single-pilot or reduced-crew cargo experiments (culturally explosive), autonomous taxi, and quieter high-bypass or open-rotor engines. The through-line is the same as 1930: more efficiency, more redundancy, and a regulator who has to be convinced.
+    simple: |-
+      eVTOL air taxis are small electric VTOL aircraft aimed at cities. The drawings look easy; batteries, certification, weather, and air-traffic integration are not.
+
+      SAF is jet fuel made from waste or synthesized sources that existing engines can burn. Supply is the bottleneck. Hydrogen and batteries will show up first on short routes because a 14-hour ocean crossing is a brutal energy-storage problem.
+
+      Meanwhile, engines get quieter and more efficient, and ATC gets more digital. The industry still has to prove each step is as safe as what it replaces.
+quizzes:
+  - question: The core idea of modern aviation safety is that…
+    options:
+      - Pilots must never make mistakes
+      - Layers of defense so one error rarely causes a hull loss
+      - Airplanes no longer need maintenance
+      - ATC is optional in Class A
+    answer: 1
+    explanation: |-
+      Defenses in depth — redundant systems, two pilots, checklists, SMS, and independent warnings — exist because errors are expected. The goal is that they do not line up (the Swiss cheese model).
+  - question: CRM (Crew Resource Management) was driven by accidents in which…
+    options:
+      - The wings fell off from metal fatigue only
+      - Often still flyable; crew did not use all resources
+      - Fuel was too cheap
+      - There were no checklists on paper
+    answer: 1
+    explanation: |-
+      Classic CRM accidents showed hierarchy and poor communication beating a flyable airplane. CRM trains assertiveness, briefings, and workload sharing.
+  - question: ICAO’s role is best described as…
+    options:
+      - Operating every airport gift shop
+      - Writes SARPs that states then put into their own law
+      - Building engines
+      - Replacing the FAA in the United States
+    answer: 1
+    explanation: |-
+      ICAO (UN) harmonizes global aviation. It does not certificate your local 737; FAA, EASA, and others do, using rules that are largely aligned with ICAO SARPs.
+  - question: In fly-by-wire, moving the sidestick or yoke…
+    options:
+      - Directly tensions a cable to the elevator on all modern types
+      - Sends a request to computers that move the surfaces
+      - Only changes the cabin lighting
+      - Bypasses all protections at all times
+    answer: 1
+    explanation: |-
+      FBW is computer-mediated. The law (Normal, Alternate, Direct, etc.) decides how that request becomes surface motion and whether envelope protection is active. Crews must know the current law.
+  - question: A practical near-term way to cut aviation CO2 without a new airframe is…
+    options:
+      - Filling tanks with water
+      - Burn certified SAF blends in existing engines
+      - Removing all flaps
+      - Turning off transponders
+    answer: 1
+    explanation: |-
+      SAF is chemically close to Jet A and is certified for blends in current engines and airframes. The constraint is production volume and cost, not a lack of engine technology. Hydrogen/battery need new airplanes and infrastructure.
+  - question: Envelope protection on a FBW airliner will not help you if…
+    options:
+      - You are in Normal law with good air data
+      - Protections drop out in a degraded law after bad sensors
+      - You are within flap limits
+      - Autothrust is engaged in a standard go-around
+    answer: 1
+    explanation: |-
+      Protections live in software that trusts its sensors. Unreliable airspeed or multiple failures can dump the airplane into Alternate or Direct law, where those protections are reduced or gone. That is a trained failure case, not a footnote.

@@ -1,0 +1,144 @@
+id: avion
+title: Avionics & flight instruments
+emoji: "📟"
+blurb: >
+  From a spinning gyro and a pitot tube to glass cockpits, GPS, TCAS, and
+  the air-data computers that quietly keep the flight-control laws honest.
+lessons:
+  - title: Pitot-static — the airplane’s sense of speed and height
+    body: |-
+      Three classic instruments share two holes in the airplane:
+
+      • <b>Pitot tube</b> — faces the airflow and measures <b>total pressure</b>.
+      • <b>Static port</b> — on the side, measures <b>ambient static pressure</b>.
+
+      <b>Airspeed indicator</b> uses the difference (dynamic pressure). That is indicated airspeed — what the wing feels — not groundspeed. Block the pitot with tape or ice and the ASI lies; that is why pitot heat exists and why crews check it on the walk-around.
+
+      <b>Altimeter</b> is an aneroid barometer calibrated in feet. Set the right QNH/QNE or you are at the wrong altitude. <b>Vertical speed</b> is the rate of change of static pressure.
+
+      Modern airplanes feed the same ports to an <b>Air Data Computer (ADC)</b> or Air Data Inertial Reference Unit, which outputs calibrated/true airspeed, Mach, altitude, and temperature to the glass cockpit and to fly-by-wire. Multiple ports and computers give redundancy; disagree lights exist because a wrong airspeed has killed airliners (pitot icing, blocked statics).
+    simple: |-
+      Two holes tell the airplane how fast and how high it is. The pitot tube points forward and feels ram air. The static port on the side feels still air.
+
+      Speed is the difference between those two. Height is the static pressure, like a barometer. Climb rate is how fast that pressure is changing.
+
+      If ice or tape blocks a hole, the gauges lie. Jets have several sets of holes and computers, plus a heated pitot, because a wrong airspeed is dangerous.
+  - title: Gyros, attitude, and heading
+    body: |-
+      Humans cannot feel bank in a cloud. We need an <b>attitude indicator</b>. Classic ones are spinning gyros that hold their orientation (rigidity in space) while the case rotates around them. A <b>heading indicator</b> is another gyro, periodically reset to the magnetic compass (which is only trustworthy in steady, level flight). The <b>turn coordinator</b> senses yaw/roll rate.
+
+      Vacuum pumps used to spin those gyros; electric gyros and then <b>laser/fiber-optic gyros</b> and <b>MEMS</b> took over. An <b>IRS / INS</b> (inertial reference/navigation system) integrates accelerometers and gyros to know attitude, heading, and — with a starting position — a reasonable guess at position. GPS updates keep inertial drift in check.
+
+      <b>Magnetic compass</b> errors (northerly turning error, acceleration error, dip) still show up in written exams because backup compasses still exist. In a glass cockpit the heading on the PFD is usually a gyro-magnetic or IRS heading, not the whiskey compass.
+    simple: |-
+      Inside clouds you cannot feel whether the wings are level. A gyro — a spinning wheel, or today a laser ring — holds its direction so the attitude display can show pitch and bank.
+
+      Heading instruments are gyros too, kept honest by Earth’s magnetic field or by GPS/inertial systems. Old airplanes used air-driven gyros; airliners use inertial reference units with GPS helping them.
+
+      The little magnetic compass on the windshield is a backup and it lies during turns and speed changes.
+  - title: Glass cockpits — PFD, MFD, and the HUD
+    body: |-
+      A <b>Primary Flight Display (PFD)</b> puts attitude, airspeed tape, altitude tape, heading, flight-mode annunciations, and usually a flight-director cue on one screen. A <b>Multi-Function Display (MFD)</b> shows map, weather, traffic, engine synoptics, and checklists.
+
+      This is not just prettier steam gauges. The same computers drive <b>autopilot / autothrust</b> and, on FBW types, the control laws. Mode awareness (what is the automation actually doing?) is now a training pillar: “What is it doing? Why? What next?”
+
+      A <b>HUD</b> (head-up display) or equivalent collimated display paints airspeed, flight path vector, and guidance on the windshield so the crew can look outside on a low-visibility takeoff or landing. Some business jets and fighters use an HMD (helmet display) instead.
+
+      Failure philosophy: multiple display units, reversion (PFD can move to another screen), and a standby attitude/airspeed/altitude instrument that is electrically independent.
+    simple: |-
+      “Glass” means computer screens instead of a dozen round dials. The PFD is the main flying screen (attitude, speed, height, heading). The MFD is the map and systems page.
+
+      The same computers often run the autopilot, so crews practice reading the mode labels: what is the machine doing right now?
+
+      A HUD writes the important numbers on the windshield so you can look outside in fog. If a screen dies, the picture can usually move to another screen, and there is a small backup instrument with its own power.
+  - title: Radios, transponders, and the nav sensors
+    body: |-
+      Even in a GPS world, the airplane is a radio station:
+
+      • <b>VHF comm</b> — talk to ATC.
+      • <b>VOR / DME / ILS / marker</b> — ground navaids, covered in the navigation module. ILS still provides the most common precision landing guidance.
+      • <b>ADF</b> — points at an NDB; fading but not dead everywhere.
+      • <b>GPS / GNSS</b> — multi-constellation, often with SBAS (WAAS, EGNOS) for approach minima. Dual or triple units, plus RAIM or ABAS integrity monitoring.
+      • <b>Radio altimeter</b> — height above terrain for the last 2,500 ft; feeds autoland, GPWS, and some control laws.
+
+      The <b>transponder</b> replies to ATC radar with a 4-digit squawk and altitude (Mode C/S). <b>ADS-B Out</b> broadcasts GPS position so everyone with In can see you. Mode S also carries TCAS coordination.
+
+      Audio panels, datalink (CPDLC), ACARS, and satcom are how modern long-haul crews talk without blocking HF. None of this replaces the need to know what the airplane will do if the screens go dark.
+    simple: |-
+      The airplane still talks over VHF radio to controllers. For finding the way it may use ground beacons (VOR, ILS) and GPS, usually several of them.
+
+      A transponder answers radar: “here I am, this is my code and altitude.” ADS-B goes further and broadcasts your GPS position so other aircraft and ATC can see you as a moving label.
+
+      A radio altimeter measures actual height off the ground on short final — important for autoland and for “terrain, pull up” warnings.
+  - title: Safety nets — GPWS, TCAS, and warnings
+    body: |-
+      Avionics is also a last line of defense.
+
+      <b>GPWS / EGPWS (TAWS)</b> looks at radio altitude, configuration, and a terrain database to yell “TERRAIN AHEAD, PULL UP” before you fly into a hill in IMC. It is staggeringly effective at stopping CFIT (controlled flight into terrain).
+
+      <b>TCAS / ACAS</b> interrogates other transponders and, if a collision is predicted, issues a Resolution Advisory (climb/descend). When two TCAS-equipped airplanes meet, they <b>coordinate</b> so both do not climb. The standing rule: a TCAS RA overrides a conflicting ATC instruction.
+
+      Other nets: windshear alerts, stall-protection (stick shaker/pusher or FBW α-floor), configuration warnings (takeoff with flaps wrong), cabin altitude, and engine fire bells. The design problem is <b>nuisance alerts</b> — a crew that is cried-wolf too often will slow down, which is why alert philosophy is a human-factors discipline.
+
+      None of these systems excuse a crew from flying the airplane. They buy seconds and they demand a trained response.
+    simple: |-
+      Some boxes exist only to save you from a bad day.
+
+      GPWS/TAWS shouts if you are about to fly into the ground in cloud. TCAS shouts if another airplane is on a collision course and tells you to climb or descend; you follow TCAS even if a controller said something else.
+
+      There are also windshear, stall, flap-configuration, and fire warnings. Designers try not to cry wolf, because a crew that ignores alerts is a crew that will someday ignore a real one.
+quizzes:
+  - question: Indicated airspeed is primarily a measure of…
+    options:
+      - Groundspeed from GPS
+      - Dynamic pressure (pitot minus static)
+      - Engine RPM
+      - Magnetic heading
+    answer: 1
+    explanation: |-
+      The ASI (or ADC) subtracts static pressure from pitot total pressure. That dynamic pressure is what the wing feels. Groundspeed is a different quantity and needs GPS or DME/INS.
+  - question: Why is pitot heat so important?
+    options:
+      - It keeps the cabin warm
+      - Ice can block the pitot so airspeed lies — accidents
+      - It calibrates the magnetic compass
+      - FADEC will not start without it
+    answer: 1
+    explanation: |-
+      Supercooled droplets ice up pitot tubes. A blocked pitot can drive a false airspeed that autopilots and humans may follow. Heat, covers on the ground, and cross-checks are the defenses.
+  - question: An inertial reference system (IRS) primarily uses…
+    options:
+      - Only the magnetic compass
+      - Accelerometers and gyros, updated in practice by GPS
+      - Engine oil pressure
+      - The weather radar beam
+    answer: 1
+    explanation: |-
+      IRS/INS integrates motion from gyros and accelerometers. It drifts with time; GNSS updates keep position honest. Attitude and heading remain useful even if GPS drops out.
+  - question: On a glass-cockpit airliner, the PFD is the screen that shows…
+    options:
+      - Only the cabin movie
+      - Attitude, airspeed, altitude, heading, and flight modes
+      - Only engine vibration
+      - Only the passenger count
+    answer: 1
+    explanation: |-
+      The Primary Flight Display is the modern six-pack: attitude in the center, speed and altitude tapes, heading, and flight-mode annunciations. Map and systems live on the MFD.
+  - question: If TCAS issues a Resolution Advisory that conflicts with an ATC instruction, crews are trained to…
+    options:
+      - Ignore TCAS and always follow the radio
+      - Follow the TCAS RA, then tell ATC
+      - Average the two commands
+      - Switch the transponder off
+    answer: 1
+    explanation: |-
+      TCAS RAs are coordinated between aircraft and are treated as a higher-priority collision-avoidance command. After responding, the crew informs ATC. Überlingen (2002) is the tragic proof of why this is non-negotiable.
+  - question: EGPWS / TAWS is designed mainly to prevent…
+    options:
+      - Engine compressor stall
+      - Controlled flight into terrain (CFIT)
+      - Bird strikes on final
+      - Hydraulic overfill
+    answer: 1
+    explanation: |-
+      Terrain Awareness and Warning Systems look at radio altitude, flight path, and a terrain database to warn before CFIT. They have dramatically reduced “flew into a mountain in cloud” accidents.

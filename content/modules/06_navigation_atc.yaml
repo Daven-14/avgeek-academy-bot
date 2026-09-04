@@ -1,0 +1,146 @@
+id: nav
+title: Navigation & ATC basics
+emoji: "🧭"
+blurb: >
+  How crews find a runway in cloud: pilotage, VOR and ILS, GPS/RNP, airspace
+  classes, and the handful of radio words that keep two strangers from
+  occupying the same piece of sky.
+lessons:
+  - title: Finding your way — the old skills still count
+    body: |-
+      Before radios, pilots used <b>pilotage</b> (matching the map to the ground) and <b>dead reckoning</b> (heading, time, airspeed, wind). Those skills still save GPS-out days and are how you notice the box is lying.
+
+      Wind is the whole game. The airplane points into the relative wind; the ground track is the vector sum of true airspeed and wind. A 40 kt crosswind on a 120 kt trainer is not a rounding error. The <b>wind triangle</b> and, today, the FMS, compute a heading that makes the track you filed.
+
+      Time is fuel. A navigation log is a fuel log. Position reports used to be how ATC knew you were alive on an ocean track; now ADS-C and CPDLC do it, but the crew still owns “are we where we think we are?”
+
+      Charts still matter: VFR sectionals, IFR enroute, SIDs/STARs, approach plates. The plate is a contract — missed-approach point, minima, frequencies, obstacles — not a suggestion.
+    simple: |-
+      Old-school navigation is looking out the window with a map, plus “fly this heading at this speed for this long.” Wind always blows you sideways, so you point a little into it to make the track you wanted.
+
+      GPS makes this look easy until it does not. Then the old skills, and a paper or electronic chart, are how you notice.
+
+      An approach chart is a contract with the procedure: how low you may go, where to miss, which radio to talk on.
+  - title: Ground navaids — VOR, DME, ILS
+    body: |-
+      <b>VOR</b> (VHF Omnidirectional Range) radiates a compass rose. Your receiver reads a radial: “I am on the 090 radial of ABC.” VORs define airways and still back up GPS. They are line-of-sight and they fail with distance and terrain.
+
+      <b>DME</b> (Distance Measuring Equipment) is a transponder pair that reads slant range — not map distance. Over the station at 6,000 ft AGL you still see about 1 NM. DME often co-lives with VOR or ILS.
+
+      <b>ILS</b> (Instrument Landing System) is still the world’s default precision approach. A localizer gives left/right; a glideslope gives up/down (typically 3°). Category I/II/III describe how low you may go and whether autoland is required. ILS is sensitive to vehicles on the critical area, snow banks, and bent antennas — which is why you hear “hold short of the ILS critical area.”
+
+      <b>NDB/ADF</b> is older: a needle pointing at a beacon, with all the mental-math gotchas. It is disappearing but not gone. <b>Marker beacons</b> used to call out ILS fixes; DME and GPS have mostly replaced them.
+    simple: |-
+      A VOR is a radio compass rose on the ground. Your instrument says which spoke you are on. DME tells how far (actually slant range) you are from the station.
+
+      ILS is the classic “follow the needles to the runway” system: one needle for left/right, one for the 3-degree slide downward. How low you may go depends on the category and your equipment.
+
+      These radios only work if you can “see” the station with radio line-of-sight. Hills and distance eat them.
+  - title: GPS, RNAV, and RNP
+    body: |-
+      <b>GNSS</b> (GPS, Galileo, GLONASS, BeiDou) gives a position. That is not enough for aviation: we need <b>integrity</b> (will it tell me if it is wrong?). <b>RAIM</b>, <b>SBAS</b> (WAAS, EGNOS), and GBAS (GLS) are integrity/accuracy layers. WAAS LPV approaches can look a lot like ILS — a glidepath to 200–250 ft — with no ground localizer.
+
+      <b>RNAV</b> means you can fly a path defined by waypoints, not by passing over a beacon. <b>RNP</b> (Required Navigation Performance) adds a containment number and onboard monitoring/alerting: RNP 0.3 means you must stay within 0.3 NM of the path 95% of the time, and the box must warn if it cannot.
+
+      That is how curved approaches into mountain airports and tight SIDs exist. The FMS flies LNAV/VNAV; the crew manages the modes and the energy. “GPS approach” in casual speech might be LNAV, LNAV/VNAV, or LPV — those minima are not the same.
+
+      GNSS can be jammed or spoofed. Crews are trained to notice (sudden map shift, IRS disagree) and fall back to IRU, VOR, or radar vectors.
+    simple: |-
+      GPS tells you where you are. Aviation also needs it to confess when it might be wrong. Extra satellites and ground stations (WAAS/EGNOS) provide that integrity so you can fly a GPS glidepath almost like an ILS.
+
+      RNAV means flying a line between waypoints, not from radio to radio. RNP means the airplane monitors itself and warns you if it cannot keep a promised accuracy, which allows curved paths into tight airports.
+
+      GPS can be jammed. That is why airliners still have inertial systems and old radios as a backup story.
+  - title: ATC and airspace, very briefly
+    body: |-
+      Air traffic control exists to <b>prevent collisions</b> and to <b>keep traffic flowing</b>. In busy airspace they also provide terrain/traffic advice, weather tidbits, and a second brain.
+
+      <b>VFR</b> (Visual Flight Rules) — you see and avoid, with weather minima. <b>IFR</b> (Instrument Flight Rules) — ATC separates you from other IFR traffic; you may fly in cloud. Most airlines are IFR even on a blue day.
+
+      Airspace classes (ICAO A–G) change who must talk, whether IFR is required, and what weather minima apply. Class A is typically high-altitude IFR only. Class B/C around big airports is “talk and transponder.” Class G is uncontrolled — you still do not own the sky.
+
+      Vertical rules: below the transition altitude you fly QNH altitudes; above the transition level you fly <b>flight levels</b> on standard 1013.25 hPa so everyone shares a pressure. RVSM (1000 ft separation between FL290 and FL410) needs certified altimetry.
+
+      Clearances are a contract: “Cleared to… via… maintain… squawk….” If you cannot comply, say so.
+    simple: |-
+      ATC’s job is to keep aircraft from hitting each other and to keep the flow moving. VFR means you look out the window and avoid people. IFR means you can fly in cloud and ATC separates you from other IFR flights. Airlines file IFR almost always.
+
+      Different airspace classes have different radio and equipment rules. Big-airport airspace is “talk to us and squawk.” Wild country may be uncontrolled, but physics and other airplanes still apply.
+
+      High up, everyone sets the same standard pressure so altitude labels match. A clearance is a contract — speak up if you cannot do it.
+  - title: Phraseology, squawks, and staying alive on the radio
+    body: |-
+      Standard words exist because improvisation kills on a busy frequency. <b>Climb</b>, <b>descend</b>, <b>maintain</b>, <b>turn left heading</b>, <b>cleared for the approach</b>, <b>hold short</b>, <b>line up and wait</b>, <b>unable</b>, <b>say again</b>, <b>standby</b>. Read back the numbers that can kill: runway, altitude, heading, transponder, hold-short.
+
+      Transponder codes: ATC assigns a discrete squawk. Three worth memorizing worldwide:
+
+      • <b>7700</b> — emergency
+      • <b>7600</b> — radio failure
+      • <b>7500</b> — unlawful interference (hijack)
+
+      1200 (US) / 7000 (many ICAO states) is the VFR conspicuity code.
+
+      Lost comms have a procedure (route, altitude, time — the “AVEF / last assigned” logic in many states). In practice, squawk 7600, fly predictably, and use phones/datalink if you have them.
+
+      Good airmanship on frequency: listen before you talk, know what you will say, and never let the radio distract you from flying the airplane. Aviate, navigate, communicate — in that order.
+    simple: |-
+      Controllers and pilots use a small, shared vocabulary so numbers do not get invented. Read back the dangerous bits: runway, height, heading, squawk, hold short.
+
+      Three transponder codes to know: 7700 emergency, 7600 radio failure, 7500 hijack.
+
+      If the radios die, squawk 7600 and keep flying the plan you last agreed. Never let a radio call come before actually flying the airplane.
+quizzes:
+  - question: Dead reckoning is…
+    options:
+      - Letting the airplane fly itself with no plan
+      - Computing position from heading, time, speed, and wind
+      - Following a VOR radial only
+      - A type of stall
+    answer: 1
+    explanation: |-
+      Dead reckoning (deduced reckoning) is the wind triangle plus a clock. It is how you notice GPS has gone wrong, and how you navigate when the glass is blank.
+  - question: DME indicates…
+    options:
+      - True map distance along the ground
+      - Slant range to the station
+      - Height above terrain
+      - Fuel remaining
+    answer: 1
+    explanation: |-
+      DME is slant range. Directly above a DME at 6,000 ft you still read about 1 NM. That is why DME is unreliable as a station-passage cue at high altitude.
+  - question: An ILS provides…
+    options:
+      - Only weather radar
+      - Localizer (lateral) plus glideslope (vertical)
+      - Engine-out procedures
+      - Cabin PA announcements
+    answer: 1
+    explanation: |-
+      Localizer = left/right of runway centerline. Glideslope = above/below the typically 3° path. Category I/II/III describe minima and required airborne/ground equipment, including autoland for the lowest ones.
+  - question: RNP 0.3 means, in operational terms, that…
+    options:
+      - Stay within 0.3 NM 95% of the time, with alerts
+      - The runway is 0.3 miles long
+      - You may only fly 0.3 degrees of bank
+      - GPS is optional
+    answer: 0
+    explanation: |-
+      Required Navigation Performance is a containment spec plus the requirement that the avionics alert if it cannot meet that spec. That is what enables tight, curved procedures.
+  - question: Squawk 7700 is used for…
+    options:
+      - Normal VFR
+      - A general emergency
+      - Radio failure
+      - Crossing an FIR boundary
+    answer: 1
+    explanation: |-
+      7700 = emergency, 7600 = lost comms, 7500 = unlawful interference. Discrete codes assigned by ATC are everything else. Lighting up 7700 paints you as an emergency on every radar scope.
+  - question: In IMC, IFR traffic is separated by…
+    options:
+      - “See and avoid” only
+      - ATC (and airborne nets like TCAS as a backup)
+      - The cabin crew
+      - Social media
+    answer: 1
+    explanation: |-
+      Instrument meteorological conditions make see-and-avoid insufficient. IFR separation is ATC’s job. TCAS is a last-ditch airborne backup, not the primary plan.

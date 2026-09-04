@@ -1,0 +1,15 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+data/progress.db
+data/*.db
+.python-version
+
+data/backups/
+data/certs_cache/
+!data/.gitkeep
+!data/backups/.gitkeep

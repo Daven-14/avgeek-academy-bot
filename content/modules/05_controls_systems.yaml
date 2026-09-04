@@ -1,0 +1,138 @@
+id: sys
+title: Flight controls & systems
+emoji: "🎛️"
+blurb: >
+  Aileron, elevator, rudder — then flaps, hydraulics, electrical buses, and
+  the fuel plumbing that keeps the fire going. How the airplane is actually
+  flown and powered.
+lessons:
+  - title: Primary flight controls
+    body: |-
+      Three axes, three primary surfaces:
+
+      • <b>Ailerons</b> (roll) — usually at the wing tips, they move in opposite directions. Adverse yaw (the down-going aileron makes more drag) is why you need a little rudder in a turn, or differential ailerons / spoilers.
+      • <b>Elevator</b> (pitch) — on the horizontal tail. Many jets use an all-moving <b>stabilizer</b> for trim and an elevator for short-term pitch. Trimming is not optional: an out-of-trim jet is a workout and a go-around hazard.
+      • <b>Rudder</b> (yaw) — on the fin. Engine-out, crosswind, and Dutch-roll damping (often with a yaw damper) are its real jobs. You do not “steer” a jet in cruise with the rudder.
+
+      On light airplanes the cables or pushrods go to the surface. On fast jets, hinge moments are huge, so <b>hydraulic actuators</b> (and now FBW computers) do the moving. Irreversible controls mean you cannot feel the airload unless the designers add artificial feel.
+
+      Tabs (trim, balance, anti-balance, servo) are small surfaces that make the big ones easier or that hold them where you left them.
+    simple: |-
+      Roll with ailerons on the wings, pitch with the elevator on the tail, yaw with the rudder on the fin.
+
+      Light airplanes connect the stick to those surfaces with cables. Fast jets need hydraulic muscles, and you may not feel the real air force on the stick.
+
+      Trim is a way to relieve the pressure so you are not muscling the airplane the whole flight. The rudder is mostly for engine failure, crosswinds, and keeping the nose coordinated — not for steering like a boat in cruise.
+  - title: High-lift devices and secondary controls
+    body: |-
+      A cruise wing is a terrible landing wing. <b>Trailing-edge flaps</b> (plain, split, slotted, Fowler) increase camber and often area, raising CL,max and drag. <b>Leading-edge slats/Kruegers</b> delay stall so the wing can sit at a higher AoA. Together they cut stall speed enough to use human-sized runways.
+
+      <b>Spoilers / speedbrakes</b> dump lift and add drag. In flight they help descend without gaining speed; on landing they “spoil” lift so the weight sits on the wheels and the brakes can work. Roll spoilers help at high speed where ailerons would twist the wing.
+
+      <b>Flaps/slats are configuration</b>: takeoff, climb, cruise, approach each has a setting. A takeoff with the wrong flap is a classic (and warned-against) accident. Autoslat and flap-load relief exist so gusts and overspeed do not wreck the mechanism.
+
+      Other secondaries: thrust reversers, nosewheel steering, and trim. None of these replace the three primary axes, but a jet is barely controllable in the landing configuration without them.
+    simple: |-
+      The wing that likes cruise is too small and too slick to land slowly. Flaps at the back and slats at the front change its shape so it can fly slower.
+
+      Spoilers are panels that pop up to kill lift and add drag. In the air they help you go down; on the runway they put weight on the wheels so brakes work.
+
+      Each phase of flight has a flap setting. Taking off with the wrong one is a well-known way to ruin a day, which is why there are configuration warnings.
+  - title: Hydraulic systems
+    body: |-
+      Hydraulics win when you need a lot of force in a small, precise package: flight controls, landing gear, flaps, slats, spoilers, nosewheel steering, thrust reversers, cargo doors.
+
+      A typical transport has <b>two or three independent hydraulic systems</b> (often called Green/Blue/Yellow or Left/Right/Center) with engine-driven pumps, plus electric pumps and a ram-air turbine (RAT) or power-transfer unit for emergencies. Fluids are phosphate-ester types (Skydrol) that hate paint and love water — messy, but fire-resistant.
+
+      Architecture matters: which surfaces sit on which system is a certification chess game so that a single leak, engine failure, or uncontained turbine burst does not take all pitch or all roll. Some airplanes (A320 family) can fly on one remaining system plus electrical backup; some Boeing types mix hydraulics with cables on certain axes.
+
+      Accumulators store pressure for braking after engines are off. “Hydraulics” is why a 300-ton airplane still rolls with a fingertip — and why a dual-hydraulic failure is a memory-item emergency.
+    simple: |-
+      Hydraulics are high-pressure oil that moves pistons. They power the heavy stuff: controls, gear, flaps, spoilers, steering.
+
+      Airliners have two or three separate hydraulic systems so one leak does not kill all control. Extra electric pumps and sometimes a little emergency turbine (RAT) that pops into the airflow keep some pressure if the engines cannot.
+
+      That is how a huge airplane still feels light on the stick — and why “dual hydraulic failure” is a serious checklist, not a shrug.
+  - title: Electrical power
+    body: |-
+      Jets are flying power stations. <b>Engine-driven generators</b> (often integrated-drive generators at 115 V AC, 400 Hz) feed AC buses. <b>Transformer-rectifiers</b> make DC. A <b>battery</b> covers start, transients, and a designed period of essential power if everything else dies. The <b>APU</b> generator can replace an engine generator on the ground and in flight within limits. A <b>RAT</b> may power an emergency generator.
+
+      Bus architecture is the art: left/right, essential, shed, battery. Designers decide which displays, which hydraulic pump, which fuel pump, and which comm radio stay alive on battery-only. That list is surprisingly short — fly, navigate, communicate, and land.
+
+      DC is also what many actuators, contactors, and the FADEC love. Smoke in the cockpit often means “isolate electrical buses” as much as it means fire. More-electric airplanes (787) push hydraulic and bleed jobs onto generators, which raises the stakes of electrical design even higher.
+    simple: |-
+      Engines drive generators. Those feed the airplane’s electrical buses. An APU can make electricity when the engines are not. A battery is the last backup, and some airplanes drop a RAT (a small windmill) to keep a few essential things alive.
+
+      Designers carefully choose what still works on battery power: enough instruments, radios, and pumps to fly and land — not the coffee maker.
+
+      Newer “more-electric” types (like the 787) use electricity for jobs that used to be hydraulic or engine-bleed air, so the electrical system is even more central.
+  - title: Fuel systems
+    body: |-
+      Fuel is energy, ballast, and a wing-bending relief. Tanks usually sit in the wing box (and sometimes center fuselage). <b>Boost pumps</b> feed the engines; <b>crossfeed</b> lets one wing supply both engines. Jets also use <b>fuel for CG control</b> and as a heat sink for oil and hydraulics.
+
+      Quantity is measured by capacitance probes — they can lie if water or wiring faults confuse them, which is why crews cross-check used fuel versus remaining. Water drains exist because jet fuel plus cold tanks grows water, and water plus bugs grows microbial sludge that clogs filters.
+
+      <b>Jettison</b> (dump) exists on many long-range types so you can get down to max landing weight after an early return. You cannot dump your way out of a badly planned fuel load: regulations set minimums (taxi, trip, contingency, alternate, final reserve).
+
+      Imbalance matters: a heavy wing changes handling and, in the limit, control authority. Fuel-leak checklists are about deciding whether it is a tank, a feed line, or an engine, and whether to land now.
+    simple: |-
+      Fuel lives mostly in the wings. Pumps send it to the engines; a crossfeed valve can share fuel if one side has a problem. On some jets, moving fuel also helps balance the airplane.
+
+      Gauges can be fooled, so crews also watch how much they have burned. Water in the tanks is a real nuisance in cold weather.
+
+      Some long-range airplanes can dump fuel to land lighter in an emergency. A leak or a big imbalance is a “land and think” problem, not a curiosity.
+quizzes:
+  - question: Adverse yaw is mainly caused by…
+    options:
+      - The rudder being too small
+      - The down aileron adds lift and drag, pulling that wing back
+      - The landing light
+      - GPS lag
+    answer: 1
+    explanation: |-
+      The aileron that goes down makes more camber, more lift, and more induced/profile drag, so that wing lags. Rudder, differential ailerons, or spoilers compensate.
+  - question: On many jet transports, long-term pitch trim is done by…
+    options:
+      - Bending the wing spars
+      - Changing the incidence of the whole horizontal stabilizer
+      - Opening the outflow valve
+      - Tilting the weather radar
+    answer: 1
+    explanation: |-
+      A trimmable horizontal stabilizer (THS) moves the whole tailplane. The elevator then stays near neutral for the new speed/CG. That is why stabilizer-trim runaways are trained so hard.
+  - question: Fowler flaps increase lift mainly by…
+    options:
+      - Heating the boundary layer
+      - Increasing camber and often wing area as they translate aft
+      - Pumping fuel to the tips
+      - Reducing bypass ratio
+    answer: 1
+    explanation: |-
+      Fowler flaps slide aft and down: more area, more camber, and usually a slot that re-energizes the boundary layer. That combination raises CL,max for takeoff and landing.
+  - question: Transport-category jets typically have multiple hydraulic systems so that…
+    options:
+      - The cabin can be painted two colors
+      - One leak or engine failure cannot kill all control power
+      - The toilets flush faster
+      - FADEC has something to talk to
+    answer: 1
+    explanation: |-
+      Independence and segregation are certification requirements. Surfaces are split across Green/Blue/Yellow (or L/R/C) systems, with electric pumps and often a RAT as further backups.
+  - question: What is a RAT in this context?
+    options:
+      - A rodent inspection team
+      - "Ram-air turbine — emergency hydraulic and/or electric power"
+      - The radio altimeter transmitter
+      - A type of flap
+    answer: 1
+    explanation: |-
+      The ram-air turbine is a small propeller/turbine that extends into the slipstream after major power loss and drives an emergency pump or generator so you can still fly and land.
+  - question: Wing fuel tanks are used not only as a store of energy but also because they…
+    options:
+      - Make the airplane illegal to park
+      - Relieve wing bending and help with CG and heat-sink control
+      - Replace the need for spars
+      - Power the pitot heat directly
+    answer: 1
+    explanation: |-
+      Fuel in the wing is “free” bending relief: its weight counters lift. Many types also transfer fuel for CG (especially in cruise as Mach and trim drag matter) and run oil/hydraulic heat exchangers in the fuel.
