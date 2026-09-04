@@ -152,6 +152,13 @@ def _run_webhook_with_health(
         await app.initialize()
         await app.start()
         aio = web.Application()
+        async def root(_request: web.Request) -> web.Response:
+            return web.Response(
+                text="AvGeek Academy bot is running. Open https://t.me/AvGeekAcademyBot",
+                content_type="text/plain",
+            )
+
+        aio.router.add_get("/", root)
         aio.router.add_get("/health", health)
         route = "/" + path.lstrip("/")
         aio.router.add_post(route, telegram_hook)
