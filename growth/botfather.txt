@@ -6,12 +6,12 @@ AvGeek Academy
 ## /setdescription
 (Short description, up to 512 chars)
 
-Learn aviation technology on Telegram: aerodynamics, structures, propulsion, avionics, systems, nav/ATC, and safety. Short lessons, quizzes, streaks, certificates. Free Aero + Structures; unlock the rest with Stars (AvGeek Pro). Teaching aid only — not flight instruction. /legal
+Learn aviation technology on Telegram — entirely free. Aerodynamics, structures, propulsion, avionics, systems, nav/ATC, and safety. Learning path, spaced review, quizzes, streaks, certificates. Optional Stars tip supports the project (never required). Teaching aid only — not flight instruction. /legal
 
 ## /setabouttext
 (About text, up to 120 chars)
 
-Short aviation lessons, quizzes & certificates. Free Aero + Structures · Pro via Stars.
+Free aviation lessons, path & quizzes. All modules unlocked. Optional Stars tip.
 
 ## /setuserpic
 Use a clean aircraft / wing / glass-cockpit icon (square, high contrast).
@@ -19,16 +19,17 @@ Use a clean aircraft / wing / glass-cockpit icon (square, high contrast).
 ## /setcommands
 start - Welcome and main menu
 menu - Open the main menu
+path - Learning roadmap
+review - Spaced review drill
 help - Commands and how to learn
-progress - Lessons, quizzes, streak
+progress - Bars, streak, reviews due
 fact - A random aviation fact
 term - Look up a glossary term
 daily - Daily lesson on|off
 certificate - View earned certificates
-pro - AvGeek Pro details
-buy - Unlock Pro with Stars
+pro - Free bot info + optional tip
+buy - Optional tip via Stars
 legal - Disclaimer, terms, privacy
 
 ## Payments / Stars
-Ensure digital goods / Stars payments are enabled for the bot per current BotFather / Telegram docs.
-Payload used by the bot: premium_30d · currency XTR · title "AvGeek Pro — 30 days".
+Optional tips only — enable Stars if you want /buy support. Payload: premium_30d · currency XTR · title "Support AvGeek Academy (optional tip)".

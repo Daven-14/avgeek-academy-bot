@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AvGeek Academy — Learn aviation on Telegram</title>
-  <meta name="description" content="Short lessons, quizzes, streaks, and certificates. Free Aerodynamics + Structures; unlock the full curriculum with Telegram Stars." />
+  <title>AvGeek Academy — Free aviation learning on Telegram</title>
+  <meta name="description" content="Entirely free aviation lessons on Telegram: path, quizzes, streaks, certificates. All 7 modules unlocked. Optional Stars tip — never required." />
   <style>
     :root {
       --bg: #0b1a2b;
@@ -31,8 +31,8 @@
       display: inline-block;
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      background: rgba(61,184,255,0.15);
-      color: var(--accent);
+      background: rgba(61,214,140,0.15);
+      color: var(--ok);
       font-size: 0.85rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -64,18 +64,6 @@
     }
     .card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
     .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin: 1rem 0 2rem;
-    }
-    .plan { position: relative; }
-    .plan.pro { border-color: rgba(212,175,55,0.45); }
-    .plan .tag {
-      position: absolute; top: 0.85rem; right: 0.85rem;
-      font-size: 0.75rem; color: var(--gold);
-    }
     ul { margin: 0.6rem 0 0; padding-left: 1.1rem; color: var(--muted); }
     li { margin: 0.25rem 0; }
     .check { color: var(--ok); }
@@ -93,61 +81,44 @@
 <body>
   <div class="wrap">
     <header>
-      <span class="badge">Telegram · AvGeek Academy</span>
+      <span class="badge">Free forever · Telegram</span>
       <h1>Learn how aircraft really work</h1>
       <p class="lead">
-        Short lessons, scored quizzes, streaks, and certificates —
-        from aerodynamics to avionics. Built for curious flyers, student pilots, and engineers.
+        Short lessons, learning path, spaced review, streaks, and certificates —
+        from aerodynamics to avionics. <strong>All modules unlocked</strong> for every learner.
       </p>
       <a class="cta" href="https://t.me/AvGeekAcademyBot">Open @AvGeekAcademyBot</a>
     </header>
 
     <section class="grid" aria-label="Features">
       <div class="card">
-        <h3>📚 Seven modules</h3>
+        <h3>📚 Seven modules — free</h3>
         <p>Aero, structures, propulsion, avionics, systems, nav/ATC, and safety / emerging tech.</p>
       </div>
       <div class="card">
-        <h3>📝 Quizzes + certificates</h3>
-        <p>Finish a module’s lessons and score ≥80% to earn a shareable certificate.</p>
+        <h3>🗺️ Path + Continue</h3>
+        <p>Roadmap with checkmarks and “You are here.” Continue jumps to the next unread lesson.</p>
       </div>
       <div class="card">
-        <h3>🔥 Streaks &amp; daily lesson</h3>
-        <p>Keep a learning streak. Opt in for a morning lesson push around 09:00 UTC.</p>
+        <h3>🧠 Spaced review</h3>
+        <p>Drill questions you missed (or gentle practice) in a short 3-question session.</p>
       </div>
       <div class="card">
-        <h3>🖼️ Diagrams</h3>
-        <p>Module home screens include illustrations when available — learn visually.</p>
+        <h3>🏅 Certificates &amp; streaks</h3>
+        <p>Finish lessons + quiz ≥80% for a cert. Celebrate 3 / 7 / 14-day streaks.</p>
       </div>
     </section>
 
-    <h2 style="text-align:center;margin:0 0 0.5rem;">Free vs Pro</h2>
-    <p class="lead" style="text-align:center;">Start free. Unlock the full curriculum with Telegram Stars.</p>
-    <div class="plans">
-      <div class="card plan">
-        <h3>Free</h3>
-        <ul>
-          <li><span class="check">✓</span> Aerodynamics basics</li>
-          <li><span class="check">✓</span> Aircraft structures &amp; materials</li>
-          <li><span class="check">✓</span> Facts, glossary, progress, streaks</li>
-          <li><span class="check">✓</span> Certificates on free modules</li>
-        </ul>
-      </div>
-      <div class="card plan pro">
-        <span class="tag">⭐ Stars</span>
-        <h3>AvGeek Pro — 30 days</h3>
-        <ul>
-          <li><span class="check">✓</span> Everything in Free</li>
-          <li><span class="check">✓</span> Propulsion, Avionics, Systems</li>
-          <li><span class="check">✓</span> Navigation &amp; ATC</li>
-          <li><span class="check">✓</span> Safety, regs &amp; emerging tech</li>
-          <li><span class="check">✓</span> Full certificate track</li>
-        </ul>
-      </div>
+    <div class="card" style="margin:1rem 0 2rem;">
+      <h3>💚 Optional tip</h3>
+      <p>
+        Content is free. If you want to support hosting and new lessons, you can send an optional
+        tip with Telegram Stars inside the bot (<code>/buy</code>). Never required.
+      </p>
     </div>
 
     <p style="text-align:center;">
-      <a class="cta" href="https://t.me/AvGeekAcademyBot">Start learning on Telegram</a>
+      <a class="cta" href="https://t.me/AvGeekAcademyBot">Start learning — free</a>
     </p>
 
     <footer>

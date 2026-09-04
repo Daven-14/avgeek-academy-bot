@@ -4,31 +4,36 @@ Interactive Telegram bot that teaches aviation technology — aerodynamics, stru
 
 **Bot:** [https://t.me/AvGeekAcademyBot](https://t.me/AvGeekAcademyBot)
 
+**Entirely free** — all 7 modules unlocked for every learner. Optional Telegram Stars tips support the project; never required for content.
+
 Aimed at curious beginners through intermediate learners. Lessons are short; every module has a scored multiple-choice quiz. Progress is stored in SQLite, keyed by Telegram user id.
 
 This is **not** a ground school, type rating, or operational manual. See `/legal` in the bot.
 
 ## Features
 
-- Onboarding (goal) on first `/start`, polished welcome + disclaimer + CTA
-- Seven curriculum modules with lessons, quizzes, and optional diagrams
-- Streaks, daily lesson push (`/daily on|off`, ~09:00 UTC)
-- Certificates when all lessons done and quiz best ≥ 80%
-- Freemium: free `aero` + `struct`; other modules via **AvGeek Pro** (Telegram Stars)
+- Onboarding (goal) on first `/start`, short welcome + disclaimer
+- Seven curriculum modules with lessons, quizzes, and diagrams
+- **Learning path** (`/path`) — roadmap with checkmarks, % complete, “You are here”
+- **Smart Continue** — jumps to the next unread lesson across the curriculum
+- **Spaced review** (`/review`) — 3-question drill from misses / finished modules
+- Streaks with celebrations at 3 / 7 / 14 days; module-complete celebrations + certificates
+- Progress bars, reviews-due count, overall %
+- Glossary with related-module deep link
+- Optional Stars tip (`/buy` / `/pro`) — support only, not a paywall
 - `/legal` disclaimer, terms, privacy
 - Polling or webhook mode
 
-## Freemium & Telegram Stars
+## Free forever
 
-| Plan | Access |
+| Access | Notes |
 | --- | --- |
-| Free | Modules `aero`, `struct` |
-| AvGeek Pro — 30 days | All modules |
+| All modules | Unlocked for every user |
+| Optional tip | Telegram Stars via `/buy` — clearly labeled optional support |
 
-- Buy with `/buy` or the Pro menu. Invoice uses `currency="XTR"` (Stars).
-- Price from env `PREMIUM_STARS_PRICE` (default **150**).
-- Payload: `premium_30d`. Handlers: `PreCheckoutQueryHandler` + successful payment.
-- Dev escape hatch: `PREMIUM_BYPASS_USER_IDS` (comma-separated Telegram ids) always get Pro.
+- Tip invoice uses `currency="XTR"` (Stars). Price from env `PREMIUM_STARS_PRICE` (default **150**).
+- Payload: `premium_30d` (legacy id; grants a “supporter” window, not content locks).
+- `PREMIUM_BYPASS_USER_IDS` still marks those ids as supporters without paying.
 
 ## Project layout
 
@@ -37,14 +42,14 @@ aviation-tutor-bot/
 ├── bot/                  Application package
 │   ├── main.py           Entry (polling or webhook)
 │   ├── handlers.py       Commands + callbacks
-│   ├── premium.py        Stars invoice + gates
+│   ├── premium.py        Optional Stars tip helpers
 │   ├── certificates.py   HTML + optional PNG
 │   ├── daily.py          JobQueue daily lesson
 │   ├── db.py             SQLite + migrations
 │   └── …
 ├── content/
 │   ├── modules/          YAML curriculum
-│   ├── diagrams/         module_id.png (do not overwrite casually)
+│   ├── diagrams/         module_id.png
 │   ├── facts.yaml
 │   └── glossary.yaml
 ├── data/                 progress.db (+ backups/)
@@ -63,18 +68,20 @@ See `growth/botfather.txt` for description, about, and commands. Quick commands 
 ```
 start - Welcome and main menu
 menu - Open the main menu
+path - Learning roadmap
+review - Spaced review drill
 help - Commands and how to learn
-progress - Lessons, quizzes, streak
+progress - Bars, streak, reviews due
 fact - A random aviation fact
 term - Look up a glossary term
 daily - Daily lesson on|off
 certificate - View earned certificates
-pro - AvGeek Pro details
-buy - Unlock Pro with Stars
+pro - Free bot info + optional tip
+buy - Optional tip via Stars
 legal - Disclaimer, terms, privacy
 ```
 
-Enable Stars / digital-goods payments for the bot per current Telegram docs.
+Enable Stars / digital-goods payments only if you want optional tips.
 
 ## Install and run
 
@@ -107,11 +114,9 @@ Do not print or log the bot token.
 
 ### Restart
 
-1. Stop the old process (Ctrl+C, or your process manager / Railway / Fly redeploy).
+1. Stop the old process (Ctrl+C, or your process manager / Render redeploy).
 2. `cd` to the project root, ensure `.venv` and `.env` are in place.
 3. `python -m bot` (or restart the container/service).
-
-If a PID still holds old code in memory, a restart is required to load file changes — editing files alone does not hot-reload a running process.
 
 ### Backup
 
@@ -129,15 +134,12 @@ docker run --rm -e TELEGRAM_BOT_TOKEN='…' -p 8080:8080 \
   -v avgeek-data:/app/data avgeek-academy
 ```
 
-`EXPOSE 8080` supports webhook hosts that inject `PORT`.
+## Deploy notes (Render / Railway / Fly)
 
-## Deploy notes (Railway / Fly)
-
-1. Set env vars from `.env.example` (token, Stars price, optional bypass ids).
-2. For webhook: set public `WEBHOOK_URL` to the service HTTPS URL; set `PORT` if the platform does not inject it; keep `WEBHOOK_PATH=/telegram` (or match your proxy).
-3. Persist `/app/data` (volume) so progress and certificates survive redeploys.
-4. Health: process should log module load counts, then either `Starting polling` or `Starting webhook…`.
-5. After deploy, message `/start` and run through `growth/launch_checklist.md`.
+1. Set env vars from `.env.example` (token, optional Stars tip price, optional bypass ids).
+2. For webhook: set public `WEBHOOK_URL`; set `PORT` if needed; keep `WEBHOOK_PATH=/telegram`.
+3. Persist `/app/data` (volume) so progress survives redeploys.
+4. After deploy, message `/start` and run through `growth/launch_checklist.md`.
 
 ## Landing page
 
@@ -145,7 +147,7 @@ Open `landing/index.html` in a browser or host it on any static site. Links to h
 
 ## Diagrams
 
-Place images at `content/diagrams/<module_id>.png` (or `.jpg`). Wired via `diagram_path()` and sent when opening a module home. See `content/diagrams/README.md`.
+Place images at `content/diagrams/<module_id>.png` (or `.jpg`). See `content/diagrams/README.md`.
 
 ## License / content note
 

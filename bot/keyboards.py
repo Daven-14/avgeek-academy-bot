@@ -5,7 +5,6 @@ from __future__ import annotations
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 from bot.content_loader import Module, QuizItem
-from bot.premium import can_access_module, is_module_free
 
 
 GOAL_CHOICES: tuple[tuple[str, str], ...] = (
@@ -26,6 +25,11 @@ def onboarding_goals() -> InlineKeyboardMarkup:
 def main_menu(*, daily_on: bool = False, streak: int = 0) -> InlineKeyboardMarkup:
     daily_label = "📅 Daily lesson: ON" if daily_on else "📅 Daily lesson: OFF"
     rows: list[list[InlineKeyboardButton]] = [
+        [InlineKeyboardButton("▶️ Continue learning", callback_data="cont")],
+        [
+            InlineKeyboardButton("🗺️ Learning path", callback_data="path"),
+            InlineKeyboardButton("🧠 Review", callback_data="rev"),
+        ],
         [InlineKeyboardButton("📚 Browse modules", callback_data="mods")],
         [
             InlineKeyboardButton("✈️ Random fact", callback_data="fact"),
@@ -36,15 +40,14 @@ def main_menu(*, daily_on: bool = False, streak: int = 0) -> InlineKeyboardMarku
             InlineKeyboardButton("🏅 Certificates", callback_data="certs"),
         ],
         [
-            InlineKeyboardButton("⭐ AvGeek Pro", callback_data="pro"),
             InlineKeyboardButton(daily_label, callback_data="daily:tog"),
+            InlineKeyboardButton("💚 Tip (optional)", callback_data="pro"),
         ],
         [
             InlineKeyboardButton("⚖️ Legal", callback_data="legal"),
             InlineKeyboardButton("❓ Help", callback_data="h"),
         ],
     ]
-    # streak is shown in the message header, not as a button
     _ = streak
     return InlineKeyboardMarkup(rows)
 
@@ -52,11 +55,8 @@ def main_menu(*, daily_on: bool = False, streak: int = 0) -> InlineKeyboardMarku
 def welcome_cta() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         [
-            [
-                InlineKeyboardButton(
-                    "🚀 Start Aerodynamics", callback_data="md:aero"
-                )
-            ],
+            [InlineKeyboardButton("▶️ Continue learning", callback_data="cont")],
+            [InlineKeyboardButton("🗺️ Learning path", callback_data="path")],
             [InlineKeyboardButton("📚 Main menu", callback_data="m")],
         ]
     )
@@ -65,19 +65,53 @@ def welcome_cta() -> InlineKeyboardMarkup:
 def modules_menu(
     modules: tuple[Module, ...], user_id: int
 ) -> InlineKeyboardMarkup:
+    _ = user_id
     rows: list[list[InlineKeyboardButton]] = []
     for m in modules:
-        free = is_module_free(m.id)
-        unlocked = can_access_module(user_id, m.id)
-        if unlocked:
-            prefix = "🆓 " if free else "⭐ "
-            label = f"{prefix}{m.emoji} {m.title}"
-        else:
-            label = f"🔒 {m.emoji} {m.title}"
+        label = f"{m.emoji} {m.title}"
         rows.append(
             [InlineKeyboardButton(label, callback_data=f"md:{m.id}")]
         )
-    rows.append([InlineKeyboardButton("🏠 Main menu", callback_data="m")])
+    rows.append(
+        [
+            InlineKeyboardButton("🗺️ Path", callback_data="path"),
+            InlineKeyboardButton("🏠 Main menu", callback_data="m"),
+        ]
+    )
+    return InlineKeyboardMarkup(rows)
+
+
+def path_menu(
+    modules: tuple[Module, ...],
+    *,
+    completed_ids: set[str],
+    next_mod_id: str | None,
+) -> InlineKeyboardMarkup:
+    rows: list[list[InlineKeyboardButton]] = []
+    for m in modules:
+        done = m.id in completed_ids
+        mark = "☑️" if done else "☐"
+        here = " → You are here" if (next_mod_id and m.id == next_mod_id) else ""
+        label = f"{mark} {m.emoji} {m.title}{here}"
+        # Truncate if needed for Telegram button label (~64 visible is fine)
+        if len(label) > 60:
+            label = label[:57] + "…"
+        rows.append([InlineKeyboardButton(label, callback_data=f"md:{m.id}")])
+    if next_mod_id:
+        rows.insert(
+            0,
+            [
+                InlineKeyboardButton(
+                    "▶️ Continue next module", callback_data=f"md:{next_mod_id}"
+                )
+            ],
+        )
+    rows.append(
+        [
+            InlineKeyboardButton("▶️ Continue lesson", callback_data="cont"),
+            InlineKeyboardButton("🏠 Menu", callback_data="m"),
+        ]
+    )
     return InlineKeyboardMarkup(rows)
 
 
@@ -90,23 +124,22 @@ def module_home(mod: Module, lessons_seen: int) -> InlineKeyboardMarkup:
             [InlineKeyboardButton(f"📖 {label}", callback_data=f"l:{mod.id}:{start_idx}")],
             [InlineKeyboardButton("📝 Quiz me", callback_data=f"qz:{mod.id}")],
             [
+                InlineKeyboardButton("🗺️ Path", callback_data="path"),
                 InlineKeyboardButton("📚 All modules", callback_data="mods"),
-                InlineKeyboardButton("🏠 Menu", callback_data="m"),
             ],
+            [InlineKeyboardButton("🏠 Menu", callback_data="m")],
         ]
     )
 
 
 def upgrade_cta(module_title: str) -> InlineKeyboardMarkup:
+    """Legacy callback target — content is free; keep a soft tip CTA."""
     _ = module_title
     return InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("⭐ Unlock with Stars", callback_data="buy")],
-            [InlineKeyboardButton("ℹ️ What is Pro?", callback_data="pro")],
-            [
-                InlineKeyboardButton("📚 Free modules", callback_data="mods"),
-                InlineKeyboardButton("🏠 Menu", callback_data="m"),
-            ],
+            [InlineKeyboardButton("📚 Open modules", callback_data="mods")],
+            [InlineKeyboardButton("💚 Optional tip", callback_data="buy")],
+            [InlineKeyboardButton("🏠 Menu", callback_data="m")],
         ]
     )
 
@@ -115,7 +148,7 @@ def pro_menu(*, is_premium: bool) -> InlineKeyboardMarkup:
     rows: list[list[InlineKeyboardButton]] = []
     if not is_premium:
         rows.append(
-            [InlineKeyboardButton("⭐ Buy AvGeek Pro (Stars)", callback_data="buy")]
+            [InlineKeyboardButton("💚 Send optional tip (Stars)", callback_data="buy")]
         )
     rows.append([InlineKeyboardButton("🏠 Main menu", callback_data="m")])
     return InlineKeyboardMarkup(rows)
@@ -219,7 +252,10 @@ def quiz_done(mod_id: str) -> InlineKeyboardMarkup:
                 InlineKeyboardButton("📖 Lessons", callback_data=f"l:{mod_id}:0"),
                 InlineKeyboardButton("⬅️ Module", callback_data=f"md:{mod_id}"),
             ],
-            [InlineKeyboardButton("🏠 Main menu", callback_data="m")],
+            [
+                InlineKeyboardButton("🗺️ Path", callback_data="path"),
+                InlineKeyboardButton("🏠 Main menu", callback_data="m"),
+            ],
         ]
     )
 
@@ -242,10 +278,25 @@ def back_menu() -> InlineKeyboardMarkup:
     )
 
 
+def glossary_result(*, related_mod_id: str | None = None) -> InlineKeyboardMarkup:
+    rows: list[list[InlineKeyboardButton]] = []
+    if related_mod_id:
+        rows.append(
+            [
+                InlineKeyboardButton(
+                    "📘 Related lesson", callback_data=f"md:{related_mod_id}"
+                )
+            ]
+        )
+    rows.append([InlineKeyboardButton("📚 Browse modules", callback_data="mods")])
+    rows.append([InlineKeyboardButton("🏠 Main menu", callback_data="m")])
+    return InlineKeyboardMarkup(rows)
+
+
 def glossary_prompt() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("📚 Modules", callback_data="mods")],
+            [InlineKeyboardButton("📚 Browse modules", callback_data="mods")],
             [InlineKeyboardButton("🏠 Main menu", callback_data="m")],
         ]
     )
@@ -256,5 +307,49 @@ def certs_menu() -> InlineKeyboardMarkup:
         [
             [InlineKeyboardButton("📚 Modules", callback_data="mods")],
             [InlineKeyboardButton("🏠 Main menu", callback_data="m")],
+        ]
+    )
+
+
+def review_choices(mod_id: str, q_idx: int, item: QuizItem) -> InlineKeyboardMarkup:
+    letters = "ABCD"
+    rows = [
+        [
+            InlineKeyboardButton(
+                f"{letters[i]}. {opt}",
+                callback_data=f"rva:{mod_id}:{q_idx}:{i}",
+            )
+        ]
+        for i, opt in enumerate(item.options)
+    ]
+    rows.append([InlineKeyboardButton("🏠 Menu", callback_data="m")])
+    return InlineKeyboardMarkup(rows)
+
+
+def review_next(*, done: bool) -> InlineKeyboardMarkup:
+    if done:
+        return InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("🧠 Another review", callback_data="rev")],
+                [
+                    InlineKeyboardButton("▶️ Continue", callback_data="cont"),
+                    InlineKeyboardButton("🏠 Menu", callback_data="m"),
+                ],
+            ]
+        )
+    return InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Next ➡️", callback_data="rvn")]]
+    )
+
+
+def module_complete_cta(mod_id: str) -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("🏅 View certificate", callback_data="certs")],
+            [
+                InlineKeyboardButton("🗺️ Path", callback_data="path"),
+                InlineKeyboardButton("▶️ Continue", callback_data="cont"),
+            ],
+            [InlineKeyboardButton("🏠 Menu", callback_data="m")],
         ]
     )

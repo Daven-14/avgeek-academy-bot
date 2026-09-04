@@ -97,6 +97,32 @@ class Curriculum:
                 break
         return out
 
+    def find_module_for_term(self, term: str) -> str | None:
+        """Best-effort: return module id whose lessons mention the term."""
+        needle = (term or "").strip().lower()
+        if not needle or len(needle) < 2:
+            return None
+        best_id: str | None = None
+        best_score = 0
+        for mod in self.modules:
+            score = 0
+            blob_title = f"{mod.title} {mod.blurb}".lower()
+            if needle in blob_title:
+                score += 5
+            for lesson in mod.lessons:
+                text = f"{lesson.title} {lesson.body} {lesson.simple}".lower()
+                if needle in text:
+                    score += 2 + text.count(needle)
+            for q in mod.quizzes:
+                qblob = f"{q.question} {q.explanation}".lower()
+                if needle in qblob:
+                    score += 1
+            if score > best_score:
+                best_score = score
+                best_id = mod.id
+        return best_id if best_score > 0 else None
+
+
 
 def _load_yaml(path: Path) -> dict | list:
     with path.open(encoding="utf-8") as fh:

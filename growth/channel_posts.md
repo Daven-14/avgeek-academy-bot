@@ -5,10 +5,10 @@ Use these on a Telegram channel that funnels to https://t.me/AvGeekAcademyBot
 ---
 
 ### 1 — Launch
-✈️ **AvGeek Academy is live**
+✈️ **AvGeek Academy is live — and free**
 
 Short aviation lessons inside Telegram — aerodynamics to avionics.
-Free: Aero + Structures. Pro unlocks the rest with Stars.
+All 7 modules unlocked. Optional Stars tip if you want to support.
 
 Tap → https://t.me/AvGeekAcademyBot
 
@@ -24,22 +24,21 @@ Start free → https://t.me/AvGeekAcademyBot
 
 ---
 
-### 3 — Freemium clarity
-🆓 vs ⭐
+### 3 — Free forever
+🆓 **No paywall**
 
-**Free:** Aerodynamics + Aircraft structures  
-**Pro (Stars, 30 days):** Propulsion, Avionics, Systems, Nav/ATC, Safety & emerging tech
-
-No credit card — pay with Telegram Stars inside the bot.
+Every module is open: Propulsion, Avionics, Systems, Nav/ATC, Safety & more.
+Optional tip via Stars supports the project — never required for content.
 
 https://t.me/AvGeekAcademyBot
 
 ---
 
-### 4 — Streaks
-🔥 **Keep the streak**
+### 4 — Path + review
+🗺️ **Learning path · 🧠 Review**
 
-Open a lesson or fact each day. Opt in to `/daily on` for a morning push (~09:00 UTC).
+See checkmarks and “You are here.” Continue jumps to the next unread lesson.
+Miss a quiz question? `/review` drills it back.
 
 Build the habit → https://t.me/AvGeekAcademyBot
 

@@ -16,14 +16,16 @@ DB_PATH = DATA_DIR / "progress.db"
 
 load_dotenv(ROOT_DIR / ".env")
 
-# Free modules for non-premium users.
-FREE_MODULE_IDS: frozenset[str] = frozenset({"aero", "struct"})
+# Kept for backwards compatibility; all modules are free.
+FREE_MODULE_IDS: frozenset[str] = frozenset(
+    {"aero", "struct", "prop", "avion", "sys", "nav", "safe"}
+)
 
 PREMIUM_PAYLOAD = "premium_30d"
 PREMIUM_DAYS = 30
-PREMIUM_TITLE = "AvGeek Pro — 30 days"
+PREMIUM_TITLE = "Support AvGeek Academy (optional tip)"
 PREMIUM_DESCRIPTION = (
-    "Unlock all curriculum modules, certificates, and Pro features for 30 days."
+    "Optional tip — all lessons and quizzes are free. Thank you for supporting the project!"
 )
 
 

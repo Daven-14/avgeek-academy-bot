@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import sqlite3
 from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
@@ -50,6 +51,14 @@ CREATE TABLE IF NOT EXISTS certificates (
     awarded_at  TEXT    NOT NULL,
     UNIQUE (user_id, module_id)
 );
+
+CREATE TABLE IF NOT EXISTS wrong_answers (
+    user_id     INTEGER NOT NULL,
+    module_id   TEXT    NOT NULL,
+    quiz_index  INTEGER NOT NULL,
+    updated_at  TEXT    NOT NULL,
+    PRIMARY KEY (user_id, module_id, quiz_index)
+);
 """
 
 # Columns added after the initial schema (SQLite-friendly migrations).
@@ -61,6 +70,7 @@ _USER_COLUMNS: tuple[tuple[str, str], ...] = (
     ("is_premium", "INTEGER NOT NULL DEFAULT 0"),
     ("premium_until", "TEXT"),
     ("onboarded", "INTEGER NOT NULL DEFAULT 0"),
+    ("milestones_json", "TEXT NOT NULL DEFAULT '[]'"),
 )
 
 
@@ -202,7 +212,7 @@ def users_with_daily_opt_in() -> list[int]:
 
 
 def set_premium(user_id: int, *, days: int = PREMIUM_DAYS) -> str:
-    """Grant premium for `days` from now (or extend from existing until). Returns ISO until."""
+    """Record an optional tip supporter window. Returns ISO until."""
     now = datetime.now(timezone.utc)
     with connect() as conn:
         row = conn.execute(
@@ -394,3 +404,91 @@ def list_certificates(user_id: int) -> list[dict[str, Any]]:
         ).fetchall()
     return [dict(r) for r in rows]
 
+
+def module_is_complete(user_id: int, module_id: str, lesson_count: int) -> bool:
+    """True when all lessons done and best quiz >= 80%."""
+    done = lessons_done(user_id, module_id)
+    if len(done) < lesson_count:
+        return False
+    best = quiz_best(user_id, module_id)
+    if not best or best[1] <= 0:
+        return False
+    return (100.0 * best[0] / best[1]) >= 80.0
+
+
+def record_wrong_answer(user_id: int, module_id: str, quiz_index: int) -> None:
+    with connect() as conn:
+        conn.execute(
+            "INSERT INTO wrong_answers (user_id, module_id, quiz_index, updated_at) "
+            "VALUES (?, ?, ?, ?) "
+            "ON CONFLICT(user_id, module_id, quiz_index) DO UPDATE SET "
+            "updated_at = excluded.updated_at",
+            (user_id, module_id, quiz_index, _utcnow()),
+        )
+
+
+def clear_wrong_answer(user_id: int, module_id: str, quiz_index: int) -> None:
+    with connect() as conn:
+        conn.execute(
+            "DELETE FROM wrong_answers "
+            "WHERE user_id = ? AND module_id = ? AND quiz_index = ?",
+            (user_id, module_id, quiz_index),
+        )
+
+
+def list_wrong_answers(user_id: int) -> list[tuple[str, int]]:
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT module_id, quiz_index FROM wrong_answers "
+            "WHERE user_id = ? ORDER BY updated_at DESC",
+            (user_id,),
+        ).fetchall()
+    return [(str(r["module_id"]), int(r["quiz_index"])) for r in rows]
+
+
+def wrong_answer_count(user_id: int) -> int:
+    with connect() as conn:
+        row = conn.execute(
+            "SELECT COUNT(*) AS n FROM wrong_answers WHERE user_id = ?",
+            (user_id,),
+        ).fetchone()
+    return int(row["n"]) if row else 0
+
+
+def milestones_sent(user_id: int) -> set[str]:
+    user = get_user(user_id)
+    if not user:
+        return set()
+    raw = user.get("milestones_json") or "[]"
+    try:
+        data = json.loads(str(raw))
+    except (TypeError, json.JSONDecodeError):
+        return set()
+    if not isinstance(data, list):
+        return set()
+    return {str(x) for x in data}
+
+
+def mark_milestone_sent(user_id: int, key: str) -> bool:
+    """Record milestone key. Returns True if newly marked (not previously sent)."""
+    with connect() as conn:
+        row = conn.execute(
+            "SELECT milestones_json FROM users WHERE user_id = ?",
+            (user_id,),
+        ).fetchone()
+        if row is None:
+            return False
+        try:
+            data = json.loads(str(row["milestones_json"] or "[]"))
+        except (TypeError, json.JSONDecodeError):
+            data = []
+        if not isinstance(data, list):
+            data = []
+        if key in data:
+            return False
+        data.append(key)
+        conn.execute(
+            "UPDATE users SET milestones_json = ? WHERE user_id = ?",
+            (json.dumps(data), user_id),
+        )
+        return True

@@ -40,6 +40,8 @@ from bot.handlers import (  # noqa: E402
     cmd_help,
     cmd_legal,
     cmd_paysupport,
+    cmd_path,
+    cmd_review,
     cmd_terms,
     cmd_menu,
     cmd_pro,
@@ -72,6 +74,8 @@ def build_app(token: str) -> Application:
     app.add_handler(CommandHandler("menu", cmd_menu))
     app.add_handler(CommandHandler("help", cmd_help))
     app.add_handler(CommandHandler("progress", cmd_progress))
+    app.add_handler(CommandHandler("path", cmd_path))
+    app.add_handler(CommandHandler("review", cmd_review))
     app.add_handler(CommandHandler("fact", cmd_fact))
     app.add_handler(CommandHandler("term", cmd_term))
     app.add_handler(CommandHandler("legal", cmd_legal))

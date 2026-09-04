@@ -1,4 +1,4 @@
-"""Freemium gates and Telegram Stars helpers."""
+"""Optional Stars tips and legacy premium helpers. All content is free."""
 
 from __future__ import annotations
 
@@ -10,7 +10,6 @@ from telegram.ext import ContextTypes
 
 from bot import db
 from bot.config import (
-    FREE_MODULE_IDS,
     PREMIUM_DAYS,
     PREMIUM_DESCRIPTION,
     PREMIUM_PAYLOAD,
@@ -23,7 +22,9 @@ log = logging.getLogger(__name__)
 
 
 def is_module_free(module_id: str) -> bool:
-    return module_id in FREE_MODULE_IDS
+    """All modules are free."""
+    _ = module_id
+    return True
 
 
 def user_has_premium(user_id: int) -> bool:
@@ -44,27 +45,16 @@ def user_has_premium(user_id: int) -> bool:
 
 
 def can_access_module(user_id: int, module_id: str) -> bool:
-    if is_module_free(module_id):
-        return True
-    return user_has_premium(user_id)
+    """All modules are free; gate retained only for API compatibility."""
+    _ = user_id, module_id
+    return True
 
 
 def premium_status_line(user_id: int) -> str:
-    if user_id in premium_bypass_user_ids():
-        return "⭐ <b>AvGeek Pro</b> (owner bypass)"
-    is_prem, until = db.raw_premium_flags(user_id)
-    if user_has_premium(user_id):
-        if until:
-            try:
-                exp = datetime.fromisoformat(str(until))
-                if exp.tzinfo is None:
-                    exp = exp.replace(tzinfo=timezone.utc)
-                label = exp.strftime("%Y-%m-%d UTC")
-                return f"⭐ <b>AvGeek Pro</b> until {label}"
-            except ValueError:
-                pass
-        return "⭐ <b>AvGeek Pro</b> active"
-    return "🆓 Free plan · Aero + Structures unlocked"
+    """Short status for welcome/progress — content is always free."""
+    if user_id in premium_bypass_user_ids() or user_has_premium(user_id):
+        return "💚 Thanks for supporting AvGeek Academy · <b>all modules free</b>"
+    return "🆓 <b>Entirely free</b> · all 7 modules unlocked"
 
 
 async def send_premium_invoice(
@@ -139,8 +129,9 @@ async def on_successful_payment(
         return
     until = db.set_premium(user.id, days=PREMIUM_DAYS)
     await msg.reply_text(
-        f"⭐ <b>Welcome to AvGeek Pro!</b>\n\n"
-        f"All modules are unlocked until <b>{until}</b>.\n"
-        f"Open /menu and explore Propulsion, Avionics, and more.",
+        f"💚 <b>Thank you for the tip!</b>\n\n"
+        f"AvGeek Academy stays free for everyone. Your support means a lot.\n"
+        f"Supporter badge until <b>{until}</b>.\n\n"
+        f"Keep learning — /path or /menu.",
         parse_mode="HTML",
     )
